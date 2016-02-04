@@ -7,7 +7,7 @@ title: 小木匠
 subtitle:
 description:
 author: 晓宇
-language:	zh
+language:	zh-Hans
 timezone: Asia/Shanghai
 
 # URL
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -71,3 +71,9 @@ deploy:
   type: git
   repo: git@github.com:xiaoyu5256/xiaoyu5256.github.io.git
   branch: master
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
