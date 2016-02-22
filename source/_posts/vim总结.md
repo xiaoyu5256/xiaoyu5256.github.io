@@ -13,6 +13,8 @@ tags:
 
 记录vim使用过程中遇到的问题和小tip。
 
+## 窗口外观
+
 ## 文件操作
 ```
 " 跳转当前光标所对应的文档
@@ -21,6 +23,16 @@ gf
 <C-o>
 " 从跳转的文档回退
 :bf
+
+```
+
+## gvim相关
+```
+" 设置gvim在window下窗口最大化
+autocmd GUIEnter * simalt ~x
+
+" gvim nerdtree 切换盘符
+:NERDTREE D:\
 
 ```
 
