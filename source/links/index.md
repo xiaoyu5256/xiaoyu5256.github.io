@@ -12,3 +12,6 @@ date: 2016-02-17 08:16:00
 [知乎-有哪些编程必备的 Vim 配置](https://www.zhihu.com/question/19989337)
 [https://github.com/yangyangwithgnu/use_vim_as_ide](https://github.com/yangyangwithgnu/use_vim_as_ide)
 [http://exvim.github.io](http://exvim.github.io)
+
+### 平台
+[gitbook](https://www.gitbook.com)
