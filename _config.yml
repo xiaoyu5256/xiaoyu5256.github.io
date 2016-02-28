@@ -4,7 +4,7 @@
 
 # Site
 title: Show me the code
-subtitle: 
+subtitle: Show me the code
 description:
 author: 晓宇
 language:	zh-Hans
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: next
+theme: yilia 
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
