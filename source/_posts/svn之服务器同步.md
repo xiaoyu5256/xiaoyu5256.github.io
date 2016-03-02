@@ -1,4 +1,4 @@
-title: svn总结
+title: svn之服务器同步
 date: 2016-03-02 18:46:40
 categories:
 - 开发工具
