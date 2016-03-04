@@ -33,7 +33,7 @@ echo '$myvar'   #$myvar
 echo \$myvar    #$myvar
 ```
 
-<!--more-->    
+<!--more-->
 
 #### 环境变量
 
@@ -186,3 +186,130 @@ read isdelete
     echo "delete is step2"
 }
 ```
+
+#### 函数
+函数参数获取和shell获取参数一样。返回值只能返回数字，通过`$?`获取返回值。
+```
+#!/bin/sh
+
+foo() {
+    echo "$1"
+    read x
+    return $x 
+}
+
+foo "I'm input'"
+if [ $? = 13 ]
+then
+    echo "right"
+else
+    echo "error"
+fi
+```
+>参考
+[Shell函数](http://www.runoob.com/linux/linux-shell-func.html)
+
+#### 命令
+1.`break;`跳出循环
+2.`:`空语句
+3.`continue`
+4.`.`又名`source`,执行shell会重新创建一个环境，不会调用的环境，`.`表示用调用的环境执行shell
+5.`echo -n`不换行，`echo -e`内容转义
+6.`eval`求值
+7.`exec`会使用`exec`后的命令替换调用的进程
+8.`exit 0`表示执行成功，退出
+9.`export`导出变量，即在其他的shell中可以读取改变量,设置环境变量
+10.`expr`表达式求值，如`x=$(expr $x+1)`
+11.`printf`格式化输出字符串，如:`printf "%s %d %c" "hello" 13 'c'`
+12.`return`函数返回
+13.`set`为shell设置参数变量,`set 2 3 4;echo $1 $3`输出为`2 4`
+14.`unset`从环境中删除变量或函数
+15.`shift`参数左移
+```
+while [ "$1" != "" ];do
+    echo "$1"
+    shift
+done
+```
+
+16.`trap`信号处理
+
+信号|描述
+---|---
+HUP(1) |挂起，通常因终端掉线或用户退出引起
+INI(2) |中断，按Ctrl+c触发
+QUIT(3)|退出，按Ctrl+\触发
+ABRT(6)|中止，因严重错误引发
+ALRM(14)|报警，通常用来处理超时
+TERM(15)|终止，通常在系统关机时触发
+如`trap 'rm -f /tmp/my_tmp_file_$$' INT`,在按`<c-c>`触发删除命令，此时默认中止操作不执行。若trap后没有命令，则执行默认操作。
+
+17.`find`
+`find / -name test`
+
+选项|描述
+---|---
+-mount 或-xdev|不搜索挂载的其他文件系统目录
+-depth |优先搜索目录内容
+-follow|跟随符号链接
+-maxdepths N|最多搜索N层目录
+-atime N|文件N天之前被最后访问过
+-mtime N|文件N天之前被最后修改过,负数表示N天内改动过的
+-name pattern|文件名(不包括路径)匹配提供的模式pattern，pattern必须总是用括号括
+-newer otherfile|文件比otherfile要新
+-type d 或-type f|文件类型为目录或文件
+-user username|文件的拥有者是username
+
+`find . \( -name "_*" -o -mtime -1\) ! -type f `
+
+选项|完整选项|描述
+---|---|---
+!|-not|测试取反
+-a|-and|且
+-o|-or|或
+
+`find . newer while2 -type f -exec ls -l {} \;`
+动作 |描述
+---|---
+-exec command |执行一个动作，动作必须以`\;`结束
+-ok command |与exec类似,每次动作执行需要用户确认,动作必须以`\;`结束
+-print |打印文件名
+-ls |对当前文件使用命令ls-dils
+
+18.`grep [options] PATTERN [files]`
+options
+选项 |描述
+---|---
+-c | 输出匹配的数目，而不是输出匹配的行
+-E | 启用扩展表达式
+-h | 取消每个输出行的普通前缀，即匹配查询模式的文件名
+-i | 忽略大小写
+-l | 只列出包含匹配行的文件名，而不输出真正的匹配行
+-v | 对匹配取反，即不包含匹配行
+
+`grep -E [a-z]\{10\} word2.txt`:查找长度为10的单词
+
+#### 命令执行
+1. 算术扩展
+```
+x=0
+while [ "$x" -ne 10 ];do
+    echo "$x"
+    x=$((x+1))
+done
+exit 0
+```
+2. 参数扩展
+```
+for image in *.gif;do
+    echo ${image%%gif}jpg
+done
+```
+参数扩展 |描述
+---|---
+${param:-defalt}|如果param为空，它的默认值为default 
+${ #param}|param的长度
+${param%word}|从尾部开始删除与word匹配最小部分，返回剩余部分
+${param%%word}|从尾部开始删除与word匹配最大部分，返回剩余部分
+${param%%word}|从头部开始删除与word匹配最小部分，返回剩余部分
+${param##word}|从头部开始删除与word匹配最大部分，返回剩余部分
