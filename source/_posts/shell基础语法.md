@@ -1,4 +1,4 @@
-title: shell总结
+title: shell基础语法
 date: 2016-02-26 22:35:08
 categories:
 - 后端
