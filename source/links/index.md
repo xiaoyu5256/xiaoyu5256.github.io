@@ -16,3 +16,6 @@ date: 2016-02-17 08:16:00
 
 ### 平台
 [gitbook](https://www.gitbook.com)
+
+### 书籍
+[编程类开放书籍荟萃](http://www.linuxstory.org/free-chinese-programming-books/)
