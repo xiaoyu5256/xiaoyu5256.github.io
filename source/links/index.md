@@ -14,8 +14,20 @@ date: 2016-02-17 08:16:00
 [http://exvim.github.io](http://exvim.github.io)
 [笨方法学习vimscript](http://learnvimscriptthehardway.onefloweroneworld.com)
 
+
+
+
+
+## 编程语言
+### python
+[知乎－Python 的练手项目有哪些值得推荐？](https://www.zhihu.com/question/29372574?utm_campaign=official_account&utm_source=weibo&utm_medium=zhihu&utm_content=question)
+
+
 ### 平台
 [gitbook](https://www.gitbook.com)
 
 ### 书籍
 [编程类开放书籍荟萃](http://www.linuxstory.org/free-chinese-programming-books/)
+[开源软件架构-翻译](http://www.ituring.com.cn/article/13057)
+[开源软件架构网站](http://aosabook.org/en/index.html)
+[开源软件架构-500L](http://aosabook.org/en/500L/)
