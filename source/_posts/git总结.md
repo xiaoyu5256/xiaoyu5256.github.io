@@ -1,6 +1,7 @@
 title: git总结
 date: 2016-02-18 08:31:27
 categories:
+- 工具
 - 开发工具
 - git
 tags:

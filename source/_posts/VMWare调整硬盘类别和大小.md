@@ -1,6 +1,8 @@
 title: VMWare调整硬盘类别和大小
 date: 2016-02-15 14:10:57
 categories:
+- 工具
+- 系统工具
 - 运维
 tags:
 - VMWare

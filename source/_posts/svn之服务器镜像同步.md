@@ -1,6 +1,7 @@
 title: svn之服务器镜像同步
 date: 2016-03-02 18:46:40
 categories:
+- 工具
 - 开发工具
 - svn
 tags:

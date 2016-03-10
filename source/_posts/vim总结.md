@@ -1,6 +1,7 @@
 title: vim总结
 date: 2016-02-19 17:12:36
 categories:
+- 工具
 - 开发工具
 - vim
 

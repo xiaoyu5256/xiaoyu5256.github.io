@@ -1,6 +1,7 @@
 title: XShell 屏幕锁定的恢复方法(Ctrl+Q)
 date: 2016-03-02 14:04:17
 categories:
+- 工具
 - 开发工具
 - Xshell
 tags:

@@ -1,6 +1,7 @@
 title: 你应该知道的10个vim小技巧
 date: 2016-02-19 15:54:11
 categories:
+- 工具
 - 开发工具
 - vim
 
