@@ -14,6 +14,14 @@ tags:
 
 记录vim使用过程中遇到的问题和小tip。
 
+## 安装
+### centos升级vim
+```
+rpm -qa | grep vim  
+yum remove vim vim-enhanced vim-common vim-minimal
+yum -y install vim*
+```
+
 ## 窗口外观
 
 ## 文件操作
@@ -36,4 +44,5 @@ autocmd GUIEnter * simalt ~x
 :NERDTREE D:\
 
 ```
+
 
