@@ -23,7 +23,7 @@ date: 2016-02-17 08:16:00
 ### python
 [知乎－Python 的练手项目有哪些值得推荐？](https://www.zhihu.com/question/29372574?utm_campaign=official_account&utm_source=weibo&utm_medium=zhihu&utm_content=question)
 ### 综合
-[http://www.composingprograms.com/(http://www.composingprograms.com/)
+[http://www.composingprograms.com/](http://www.composingprograms.com/)
 
 ### 平台
 [gitbook](https://www.gitbook.com)
