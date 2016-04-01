@@ -23,8 +23,8 @@ date: 2016-02-17 08:16:00
 ### python
 [知乎－Python 的练手项目有哪些值得推荐？](https://www.zhihu.com/question/29372574?utm_campaign=official_account&utm_source=weibo&utm_medium=zhihu&utm_content=question)
 [The Elements of Python Style](https://github.com/amontalenti/elements-of-python-style)
-
-
+[intermediatePython](https://github.com/yasoob/intermediatePython)
+[intermediatePython中文翻译](https://github.com/eastlakeside/interpy-zh)
 
 ### c语言
 [你是如何学习 Linux 编程的？](https://www.zhihu.com/question/20730157)
