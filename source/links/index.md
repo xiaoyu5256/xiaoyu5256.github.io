@@ -20,6 +20,9 @@ date: 2016-02-17 08:16:00
 
 
 ## 编程语言
+### Java
+[Java资源大全中文版](https://github.com/jobbole/awesome-java-cn)
+
 ### python
 [知乎－Python 的练手项目有哪些值得推荐？](https://www.zhihu.com/question/29372574?utm_campaign=official_account&utm_source=weibo&utm_medium=zhihu&utm_content=question)
 [The Elements of Python Style](https://github.com/amontalenti/elements-of-python-style)
