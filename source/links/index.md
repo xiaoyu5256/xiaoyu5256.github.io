@@ -29,6 +29,12 @@ date: 2016-02-17 08:16:00
 [intermediatePython](https://github.com/yasoob/intermediatePython)
 [intermediatePython中文翻译](https://github.com/eastlakeside/interpy-zh)
 
+### js
+#### angular
+[thoughtram](http://blog.thoughtram.io/)
+
+
+
 ### c语言
 [你是如何学习 Linux 编程的？](https://www.zhihu.com/question/20730157)
 
