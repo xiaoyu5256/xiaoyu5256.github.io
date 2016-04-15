@@ -14,9 +14,10 @@ date: 2016-02-17 08:16:00
 [http://exvim.github.io](http://exvim.github.io)
 [笨方法学习vimscript](http://learnvimscriptthehardway.onefloweroneworld.com)
 
-### 系统工具
+### 常用工具
 [mwget](https://www.ttlsa.com/tools/mwget-get-file/)
-
+[git window客户端](https://git-for-windows.github.io/)
+[typora--markdown编辑器](http://www.typora.io/)
 
 
 ## 编程语言
