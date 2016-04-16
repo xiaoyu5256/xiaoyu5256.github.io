@@ -19,6 +19,8 @@ date: 2016-02-17 08:16:00
 [git window客户端](https://git-for-windows.github.io/)
 [typora--markdown编辑器](http://www.typora.io/)
 [lantern](https://github.com/getlantern/lantern)
+[wox window下的Alfred](https://github.com/Wox-launcher/Wox)
+[wireshark](https://www.wireshark.org/download.html)
 
 ## 编程语言
 ### Java
