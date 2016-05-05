@@ -56,3 +56,4 @@ date: 2016-02-17 08:16:00
 [开源软件架构-翻译](http://www.ituring.com.cn/article/13057)
 [开源软件架构网站](http://aosabook.org/en/index.html)
 [开源软件架构-500L](http://aosabook.org/en/500L/)
+[树袋熊藏书阁](http://book.hanzheng.info/)
