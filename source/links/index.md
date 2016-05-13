@@ -49,7 +49,8 @@ date: 2016-02-17 08:16:00
 
 ### 平台
 [gitbook](https://www.gitbook.com)
-
+### 博客
+[Lea Verou](http://lea.verou.me/) 《css secrets》作者
 ### 书籍
 [编程类开放书籍荟萃](http://www.linuxstory.org/free-chinese-programming-books/)
 [程序员必读书单 1.0](http://lucida.me/blog/developer-reading-list/)
