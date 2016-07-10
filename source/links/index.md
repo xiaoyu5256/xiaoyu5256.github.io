@@ -59,7 +59,7 @@ date: 2016-02-17 08:16:00
 [Lea Verou](http://lea.verou.me/) 《css secrets》作者
 [arganzheng's Weblog](http://blog.arganzheng.me/)
 [廖雪松的官方网站](http://www.liaoxuefeng.com/)
-
+[王福强的博客](http://afoo.me/)
 ### 书籍
 [编程类开放书籍荟萃](http://www.linuxstory.org/free-chinese-programming-books/)
 [程序员必读书单 1.0](http://lucida.me/blog/developer-reading-list/)
