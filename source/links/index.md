@@ -14,6 +14,8 @@ date: 2016-02-17 08:16:00
 [http://exvim.github.io](http://exvim.github.io)
 [笨方法学习vimscript](http://learnvimscriptthehardway.onefloweroneworld.com)
 
+### git
+[gitignore](https://www.gitignore.io/)
 ### 常用工具
 [mwget](https://www.ttlsa.com/tools/mwget-get-file/)
 [git window客户端](https://git-for-windows.github.io/)
