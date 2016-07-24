@@ -1,4 +1,4 @@
-title: redis总结.md
+title: redis总结
 date: 2016-07-23 13:09:34
 categories:
 - 后端
