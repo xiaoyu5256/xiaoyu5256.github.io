@@ -27,11 +27,11 @@ make&&make install
 
 命令|描述
 ---|---
-redis-server|Redis服务器端启动程序
-redis-cli|Redis客户端操作工具。也可以用telnet根据其纯文本协议来操作
-redis-benchmark|Redis性能测试工具
-redis-check-aof|数据修复工具
-redis-check-dump|检查导出工具
+redis-server| Redis服务器端启动程序
+redis-cli| Redis客户端操作工具。也可以用telnet根据其纯文本协议来操作
+redis-benchmark| Redis性能测试工具
+redis-check-aof| 数据修复工具
+redis-check-dump| 检查导出工具
 
 4 配置redis,修改daemonize配置项为yes，使Redis进程在后台运行
 ```
@@ -49,6 +49,8 @@ echo "/usr/local/bin/redis-server /etc/redis.conf" >>/etc/rc.local
 ```
 
 7 配置参数说明
+
+参数|说明
 ---|---
 daemonize|是否以后台daemon方式运行
 pidfile|pid文件位置

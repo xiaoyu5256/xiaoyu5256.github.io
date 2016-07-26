@@ -269,16 +269,18 @@ TERM(15)|终止，通常在系统关机时触发
 -o|-or|或
 
 `find . newer while2 -type f -exec ls -l {} \;`
-动作 |描述
+
+动作|描述
 ---|---
--exec command |执行一个动作，动作必须以`\;`结束
--ok command |与exec类似,每次动作执行需要用户确认,动作必须以`\;`结束
--print |打印文件名
--ls |对当前文件使用命令ls-dils
+-exec command|执行一个动作，动作必须以`\;`结束
+-ok command|与exec类似,每次动作执行需要用户确认,动作必须以`\;`结束
+-print|打印文件名
+-ls|对当前文件使用命令ls-dils
 
 18.`grep [options] PATTERN [files]`
 options
-选项 |描述
+
+选项|描述
 ---|---
 -c | 输出匹配的数目，而不是输出匹配的行
 -E | 启用扩展表达式
@@ -305,6 +307,7 @@ for image in *.gif;do
     echo ${image%%gif}jpg
 done
 ```
+
 参数扩展 |描述
 ---|---
 ${param:-defalt}|如果param为空，它的默认值为default 
