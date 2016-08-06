@@ -79,7 +79,7 @@ fi
 ```
 vim /etc/httpd/conf.d/owncloud.conf
 ```
-添加内容：
+    添加内容：
 ```
 nameVirtualHost *:80
 <VirtualHost *:80>
@@ -90,75 +90,51 @@ nameVirtualHost *:80
     CustomLog logs/cloud.me-access_log common
 </VirtualHost>
 ```
-查看日志，执行`tail -f /var/log/httpd/cloud.me-error_log`即可。
+    查看日志，执行`tail -f /var/log/httpd/cloud.me-error_log`即可。
 
 6. 修改owncloud配置。
 ```
 vim /var/www/owncloud/config/config.php
 ```
-修改`overwrite.cli.url`成自己的域名，`trusted_domains`添加自己的域名。
+    修改`overwrite.cli.url`成自己的域名，`trusted_domains`添加自己的域名。
 
 7. 开启https。
 ```
 yum install mod_ssl
 mkdir /etc/httpd/ssl
 ```
-生成证书
+    生成证书
 ```
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/httpd/ssl/apache.key -out /etc/httpd/ssl/apache.crt
 
 ```
-添加apache的ssl配置
+    导入证书
+```
+cd /var/www/owncloud
+sudo -u apache /opt/rh/php54/root/usr/bin/php occ security:certificates:import /etc/httpd/ssl/apache.crt
+```
+    添加apache的ssl配置
 ```
  vi /etc/httpd/conf.d/owncloud-ssl.conf
 ```
-内容如下：
+    内容如下：
 ```
+LoadModule ssl_module modules/mod_ssl.so
+Listen 443
+
 <VirtualHost *:80>
   ServerAdmin youremail
-  ServerName  youapp.com
-  Redirect permanent / https://cloud.showmecode.cn/
+  ServerName yourdomain
+  Redirect permanent / https://yourdomain/
 </VirtualHost>
 
-<IfModule mod_ssl.c>
-  <VirtualHost *:443>
-    ServerAdmin youremail
-    ServerName youapp.com
-    DirectoryIndex index.html index.php
-    DocumentRoot /var/www/owncloud
-    SSLEngine on
-    SSLCertificateFile      /etc/httpd/ssl/apache.crt
-    SSLCertificateKeyFile   /etc/httpd/ssl/apache.key
-    <FilesMatch "\.(cgi|shtml|phtml|php)$">
-       SSLOptions +StdEnvVars
-    </FilesMatch>
-    <Directory /var/www/owncloud/>
-       Options +FollowSymlinks
-       AllowOverride All
-
-      <IfModule mod_dav.c>
-        Dav off
-      </IfModule>
-
-      SetEnv HOME /var/www/owncloud
-      SetEnv HTTP_HOME /var/www/owncloud
-
-    </Directory>
-    <Directory /usr/lib/cgi-bin>
-       SSLOptions +StdEnvVars
-    </Directory>
-
-    BrowserMatch "MSIE [2-6]" \
-                                nokeepalive ssl-unclean-shutdown \
-                                downgrade-1.0 force-response-1.0
-    # MSIE 7 and newer should be able to use keepalive
-    BrowserMatch "MSIE [17-9]" ssl-unclean-shutdown
-
-     <IfModule mod_headers.c>
-        Header always set Strict-Transport-Security "max-age=15768000; includeSubDomains; preload"
-      </IfModule>
-  </VirtualHost>
-</IfModule>
+<VirtualHost *:443>
+ServerName yourdomain
+SSLEngine on
+SSLCertificateFile      /etc/httpd/ssl/apache.crt
+SSLCertificateKeyFile   /etc/httpd/ssl/apache.key
+DocumentRoot /var/www/owncloud
+</VirtualHost>
 ```
 
 
@@ -168,3 +144,4 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/httpd/ssl/apach
 >参考
 [Owncloud　安装实录(Apache2.4+PHP7+MariaDB10)](http://huifeng.me/2016/05/03/owncloud-install/)
 [How To Create a SSL Certificate on Apache for CentOS 6](https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-centos-6)
+[https://kerrenortlepp.wordpress.com/2015/03/16/how-to-setup-owncloud-8-for-personal-use-on-centos-7-with-ssl/](https://kerrenortlepp.wordpress.com/2015/03/16/how-to-setup-owncloud-8-for-personal-use-on-centos-7-with-ssl/)
