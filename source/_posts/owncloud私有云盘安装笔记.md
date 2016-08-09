@@ -32,6 +32,7 @@ wget https://download.owncloud.org/community/owncloud-9.1.0.tar.bz2 --no-check-c
 tar -jxvf owncloud-9.1.0.tar.bz2
 mv owncloud /var/www/
 ```
+<!--more-->
 
 3. 目录权限，执行以下脚本即可。
 ```

@@ -39,6 +39,7 @@ ghci>doubleSmallNumber' 101
 
 ```
 
+<!--more-->
 #### 列表
 ---
 **拼接,使用`++`**

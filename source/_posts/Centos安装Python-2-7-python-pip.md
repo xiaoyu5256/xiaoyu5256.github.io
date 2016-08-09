@@ -60,6 +60,7 @@ yum install openssl*
 yum install -y bzip2*
 ```
 
+<!--more-->
 
 ### 编译安装
 ```shell

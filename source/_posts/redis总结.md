@@ -33,6 +33,7 @@ redis-benchmark| Redis性能测试工具
 redis-check-aof| 数据修复工具
 redis-check-dump| 检查导出工具
 
+<!--more-->
 4 配置redis,修改daemonize配置项为yes，使Redis进程在后台运行
 ```
 cp redis.conf /etc/
