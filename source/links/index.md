@@ -27,6 +27,8 @@ date: 2016-02-17 08:16:00
 [wireshark](https://www.wireshark.org/download.html)
 [搬瓦工](https://bandwagonhost.com/)
 [mac下工具集](https://github.com/jaywcjlove/awesome-mac)
+[我的Mac上软件集](mac_soft.md)
+
 ## 编程语言
 ### Java
 [Java资源大全中文版](https://github.com/jobbole/awesome-java-cn)
