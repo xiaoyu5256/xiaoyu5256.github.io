@@ -3,13 +3,15 @@ date: 2016-08-10 15:29:00
 ---
 
 [Homebrew](http://brew.sh/index_zh-cn.html) 软件安装管理工具
-[Homebrew Cask](https://caskroom.github.io/) 命令行安装应用程序 
+[Homebrew Cask](https://caskroom.github.io/) 命令行安装应用程序
 [Cakebrew](https://www.cakebrew.com/) Homebrew的客户端GUI软件
 [iTerm2](http://www.iterm2.com/) 好用的终端软件
 [oh my zsh](http://ohmyz.sh/)拥有大量的有用的功能，助手，插件，主题，等特性的命令行工具插件
 [Beyond Compare](http://www.scootersoftware.com/download.php) 文件比较
 [ShiftIt](https://github.com/fikovnik/ShiftIt) 窗口位置和大小管理软件
 [Alfred](https://www.alfredapp.com/) 快速打开应用和文件等
+[Seil](https://pqrs.org/osx/karabiner/seil.html.en) Esc键映射
+[Karabiner](https://pqrs.org/osx/karabiner/index.html.en) 键盘映射工具
 [ShadowsocksX](https://shadowsocks.org/en/index.html) 翻墙客户端
 [Dash](https://kapeli.com/dash) 文档工具
 [Jietu](http://jietu.qq.com/) 截图工具
