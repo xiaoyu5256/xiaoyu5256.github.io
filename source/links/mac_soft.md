@@ -57,7 +57,7 @@ date: 2016-08-10 15:29:00
 
 [Tower](https://www.git-tower.com/) Git客户端工具(收费)
 
-
+[kindle](https://www.amazon.cn/gp/digital/fiona/kcp-landing-page/ref=sd_allcat_firetab_l3_f98948)
 
 
 
