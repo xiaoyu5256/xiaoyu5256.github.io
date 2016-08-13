@@ -13,7 +13,7 @@ date: 2016-08-10 15:29:00
 
 [oh my zsh](http://ohmyz.sh/)拥有大量的有用的功能，助手，插件，主题，等特性的命令行工具插件
 
-[Beyond Compare](http://www.scootersoftware.com/download.php) 文件比较
+[Beyond Compare](http://www.scootersoftware.com/download.php) 文件比较(收费)
 
 [ShiftIt](https://github.com/fikovnik/ShiftIt) 窗口位置和大小管理软件
 
@@ -22,6 +22,8 @@ date: 2016-08-10 15:29:00
 [Seil](https://pqrs.org/osx/karabiner/seil.html.en) Esc键映射
 
 [Karabiner](https://pqrs.org/osx/karabiner/index.html.en) 键盘映射工具
+
+[xtrafinder](http://www.trankynam.com/xtrafinder/) Finder功能增强，tab打开，剪切等
 
 [ShadowsocksX](https://shadowsocks.org/en/index.html) 翻墙客户端
 
@@ -36,6 +38,8 @@ date: 2016-08-10 15:29:00
 [Typora](http://www.typora.io/) Markdown编辑器
 
 [VOX Player](https://coppertino.com/vox/mac) 免费全能音乐播放器
+
+[VLC](http://www.videolan.org/vlc/)开源视频播放器
 
 [eudic](http://www.eudic.net/eudic/mac_dictionary.aspx)
 
@@ -58,6 +62,8 @@ date: 2016-08-10 15:29:00
 [Tower](https://www.git-tower.com/) Git客户端工具(收费)
 
 [kindle](https://www.amazon.cn/gp/digital/fiona/kcp-landing-page/ref=sd_allcat_firetab_l3_f98948)
+
+[popclip](https://pilotmoon.com/popclip/)选择文字弹出操作浮层
 
 
 
