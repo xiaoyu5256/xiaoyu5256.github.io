@@ -1,6 +1,9 @@
 title: 学习资源
 date: 2016-02-17 08:16:00
 ---
+
+[前端](front)
+
 ## 开发工具
 ### VIM
 [vimer的程序世界](http://www.vimer.cn/)
@@ -39,10 +42,6 @@ date: 2016-02-17 08:16:00
 [intermediatePython](https://github.com/yasoob/intermediatePython)
 [intermediatePython中文翻译](https://github.com/eastlakeside/interpy-zh)
 [fullstackpython](https://www.fullstackpython.com/)
-### js
-#### angular
-[thoughtram](http://blog.thoughtram.io/)
-
 
 
 ### c语言
@@ -51,7 +50,6 @@ date: 2016-02-17 08:16:00
 ### 综合
 [http://www.composingprograms.com/](http://www.composingprograms.com/)
 [awesome](https://github.com/sindresorhus/awesome)
-[AlloyTeam前端代码规范](http://alloyteam.github.io/CodeGuide/)
 
 ### 网络
 [一站式学习Wireshark](https://community.emc.com/thread/194901?start=0&tstart=0)
