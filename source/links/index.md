@@ -51,6 +51,8 @@ date: 2016-02-17 08:16:00
 ### 综合
 [http://www.composingprograms.com/](http://www.composingprograms.com/)
 [awesome](https://github.com/sindresorhus/awesome)
+[AlloyTeam前端代码规范](http://alloyteam.github.io/CodeGuide/)
+
 ### 网络
 [一站式学习Wireshark](https://community.emc.com/thread/194901?start=0&tstart=0)
 
