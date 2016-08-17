@@ -63,6 +63,7 @@ date: 2016-02-17 08:16:00
 [arganzheng's Weblog](http://blog.arganzheng.me/)
 [廖雪松的官方网站](http://www.liaoxuefeng.com/)
 [王福强的博客](http://afoo.me/)
+[邹业盛的学习笔记](https://www.zouyesheng.com/)
 [学习笔记](https://github.com/GeniusVJR/LearningNotes)
 ### 书籍
 [编程书籍github](https://github.com/vhf/free-programming-books)
