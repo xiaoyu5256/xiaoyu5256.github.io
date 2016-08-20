@@ -61,7 +61,7 @@ chkconfig ntpd on
 export CEPH_DEPLOY_REPO_URL=http://mirrors.163.com/ceph/rpm-hammer/el6
 export CEPH_DEPLOY_GPG_URL=http://mirrors.163.com/ceph/keys/release.asc
 ```
-
+<!--more-->
 ## 安装
 - 在ceph-node1上执行,指定安装1.5.33,安装1.5.34会有问题：
 ```
@@ -95,7 +95,7 @@ ceph-deploy osd prepare ceph-node1:/var/local/osd0  ceph-node2:/var/local/osd1 c
 - 启用osd
 ```
 ceph-deploy osd activate ceph-node1:/var/local/osd0 ceph-node2:/var/local/osd1 ceph-node3:/var/local/osd2
-
+```
 
 >参考
 [基于centos6.7的Ceph分布式文件系统安装指南](http://blog.csdn.net/yhao2014/article/details/51394815)
