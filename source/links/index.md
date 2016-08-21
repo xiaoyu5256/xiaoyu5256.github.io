@@ -51,6 +51,9 @@ date: 2016-02-17 08:16:00
 ### c语言
 [你是如何学习 Linux 编程的？](https://www.zhihu.com/question/20730157)
 
+### shell
+[命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
+
 ### 综合
 [http://www.composingprograms.com/](http://www.composingprograms.com/)
 [awesome](https://github.com/sindresorhus/awesome)
