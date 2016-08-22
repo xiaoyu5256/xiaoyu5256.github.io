@@ -10,6 +10,7 @@ date: 2016-08-16 11:24:00
 [thoughtram](http://blog.thoughtram.io/)
 ### react
 [awesome react](https://github.com/enaqx/awesome-react)
+[react 资源](http://huli.logdown.com/posts/276040-react-resource-consolidation)
 ## css
 ### 模式
 [BEM](https://en.bem.info/)
