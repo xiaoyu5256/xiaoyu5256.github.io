@@ -25,6 +25,10 @@ date: 2016-02-17 08:16:00
 [docker](https://www.docker.com/)
 [vagrant](https://www.vagrantup.com/)
 
+### 打包工具
+[window安装程序制作](http://www.jrsoftware.org/isinfo.php)
+[Resource Hacker](http://angusj.com/resourcehacker/)修改器
+
 ### 常用工具
 [mwget](https://www.ttlsa.com/tools/mwget-get-file/)
 [git window客户端](https://git-for-windows.github.io/)
