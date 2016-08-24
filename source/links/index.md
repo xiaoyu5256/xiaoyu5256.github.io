@@ -58,8 +58,13 @@ date: 2016-02-17 08:16:00
 [http://www.composingprograms.com/](http://www.composingprograms.com/)
 [awesome](https://github.com/sindresorhus/awesome)
 
+## 计算机基础
 ### 网络
 [一站式学习Wireshark](https://community.emc.com/thread/194901?start=0&tstart=0)
+
+### 存储
+[存储基础知识](https://community.emc.com/thread/176852)
+
 
 ### 平台
 [gitbook](https://www.gitbook.com)
