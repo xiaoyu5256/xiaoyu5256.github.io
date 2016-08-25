@@ -11,6 +11,7 @@ date: 2016-08-16 11:24:00
 ### react
 [awesome react](https://github.com/enaqx/awesome-react)
 [react 资源](http://huli.logdown.com/posts/276040-react-resource-consolidation)
+[React + Redux 项目工程架构实战](http://lifei.github.io/2016/01/22/react-redux-best-practice/)
 ## css
 ### 模式
 [BEM](https://en.bem.info/)
