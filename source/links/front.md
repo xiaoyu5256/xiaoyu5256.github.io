@@ -4,6 +4,7 @@ date: 2016-08-16 11:24:00
 
 ## 综合
 [AlloyTeam前端代码规范](http://alloyteam.github.io/CodeGuide/)
+[前端库汇总](https://www.awesomes.cn)
 
 ## js
 ### angular
