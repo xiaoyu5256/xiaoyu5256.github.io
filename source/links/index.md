@@ -68,7 +68,7 @@ date: 2016-02-17 08:16:00
 
 ### 存储
 [存储基础知识](https://community.emc.com/thread/176852)
-
+[minio对象存储](https://minio.io/)
 
 ### 平台
 [gitbook](https://www.gitbook.com)
