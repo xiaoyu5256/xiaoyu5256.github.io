@@ -35,7 +35,9 @@ date: 2016-08-10 15:29:00
 
 [QQ](http://im.qq.com/macqq/index.shtml)
 
-[Typora](http://www.typora.io/) Markdown编辑器
+[Typora](http://www.typora.io/) Markdown编辑器(由于格式不对就会删除内容，放弃使用)
+
+[Mou](http://25.io/mou/) Markdown编辑器
 
 [VOX Player](https://coppertino.com/vox/mac) 免费全能音乐播放器
 

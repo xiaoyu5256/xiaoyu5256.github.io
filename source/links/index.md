@@ -39,6 +39,7 @@ date: 2016-02-17 08:16:00
 [搬瓦工](https://bandwagonhost.com/)
 [mac下工具集](https://github.com/jaywcjlove/awesome-mac)
 [我的Mac上软件集](mac_soft)
+[rclone云盘文件同步](https://github.com/ncw/rclone)
 
 ## 编程语言
 ### Java
