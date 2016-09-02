@@ -24,6 +24,12 @@ date: 2016-08-16 11:24:00
 [BEM](https://en.bem.info/)
 [smacss](https://smacss.com/)
 [oocss](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)
+[CSS指南书](http://cssguidelin.es/)
+[可维护的css](http://maintainablecss.com/)
+
+### 博客
+[CSS魔法](http://csswizardry.com/)
+[PHILIP WALTON博客](https://philipwalton.com/)
 
 ### 样式库
 [Sheets of Paper阅读样式](https://github.com/delight-im/HTML-Sheets-of-Paper)
