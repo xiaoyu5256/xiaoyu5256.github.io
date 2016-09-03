@@ -59,6 +59,9 @@ date: 2016-02-17 08:16:00
 ### shell
 [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
 
+### 运维
+[远程执行命令行](http://www.fabfile.org/)
+
 ### 综合
 [http://www.composingprograms.com/](http://www.composingprograms.com/)
 [awesome](https://github.com/sindresorhus/awesome)
