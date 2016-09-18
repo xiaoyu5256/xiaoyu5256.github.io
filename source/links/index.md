@@ -61,6 +61,7 @@ date: 2016-02-17 08:16:00
 
 ### 运维
 [远程执行命令行](http://www.fabfile.org/)
+[ansible](https://www.ansible.com/)
 
 ### 综合
 [http://www.composingprograms.com/](http://www.composingprograms.com/)
