@@ -90,6 +90,7 @@ date: 2016-02-17 08:16:00
 [邹业盛的学习笔记](https://www.zouyesheng.com/)
 [学习笔记](https://github.com/GeniusVJR/LearningNotes)
 [JetChars](http://bdt.cwj.tw/build/html/index.html)
+[夏永峰](http://blog.xiayf.cn/)
 
 ### 书籍
 [编程书籍github](https://github.com/vhf/free-programming-books)
