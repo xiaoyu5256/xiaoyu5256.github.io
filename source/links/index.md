@@ -70,6 +70,8 @@ date: 2016-02-17 08:16:00
 [30 天学习 30 种新技术系列](http://www.jianshu.com/p/96b45ee9139f)
 [30 天学习 30 种新技术系列--原文](https://blog.openshift.com/learning-30-technologies-in-30-days-a-developer-challenge/)
 [52-technologies-in-2016](https://github.com/shekhargulati/52-technologies-in-2016)
+[A闪网](http://www.ashan.org/)
+
 ## 计算机基础
 ### 网络
 [一站式学习Wireshark](https://community.emc.com/thread/194901?start=0&tstart=0)
