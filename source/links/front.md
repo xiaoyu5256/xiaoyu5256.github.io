@@ -6,6 +6,7 @@ date: 2016-08-16 11:24:00
 [AlloyTeam前端代码规范](http://alloyteam.github.io/CodeGuide/)
 [前端库汇总](https://www.awesomes.cn)
 [github前端资源](https://github.com/helloqingfeng/Awsome-Front-End-learning-resource)
+[前端资源汇总](https://github.com/helloqingfeng/Awsome-Front-End-learning-resource)
 ## js
 ### angular
 [thoughtram](http://blog.thoughtram.io/)
