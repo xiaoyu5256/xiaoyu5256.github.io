@@ -42,6 +42,10 @@ date: 2016-02-17 08:16:00
 [我的Mac上软件集](mac_soft)
 [rclone云盘文件同步](https://github.com/ncw/rclone)
 
+## 中间件
+### 消息队列
+[RabbitMQ 使用参考](https://www.zouyesheng.com/rabbitmq.html)
+
 ## 编程语言
 ### Java
 [Java资源大全中文版](https://github.com/jobbole/awesome-java-cn)
