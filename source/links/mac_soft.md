@@ -23,7 +23,7 @@ date: 2016-08-10 15:29:00
 
 [Karabiner](https://pqrs.org/osx/karabiner/index.html.en) 键盘映射工具
 
-[xtrafinder](http://www.trankynam.com/xtrafinder/) Finder功能增强，tab打开，剪切等
+~~[xtrafinder](http://www.trankynam.com/xtrafinder/) Finder功能增强，tab打开，剪切等~~
 
 [ShadowsocksX](https://shadowsocks.org/en/index.html) 翻墙客户端
 
@@ -47,15 +47,17 @@ date: 2016-08-10 15:29:00
 
 [owncloud](https://owncloud.org/install/#install-clients) 自建云盘的客户端
 
-[Navicat Premiumn](https://www.navicat.com/) 数据库管理工具(收费)
+~~[Navicat Premiumn](https://www.navicat.com/) 数据库管理工具(收费)~~
+
+[postico](https://eggerapps.at/postico/) Mysql客户端
 
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) IDE
 
-[BetterZip 3](https://macitbetter.com/) 压缩解压缩工具支持格式 ZIP、TAR、TGZ、TBZ、TXZ (new)、7-ZIP、RAR
+~~[BetterZip 3](https://macitbetter.com/) 压缩解压缩工具支持格式 ZIP、TAR、TGZ、TBZ、TXZ (new)、7-ZIP、RAR~~
 
 [微信](http://weixin.qq.com/cgi-bin/readtemplate?t=mac&lang=zh_CN)
 
-[Folx](http://mac.eltima.com/cn/download-manager.html) 下载工具
+~~[Folx](http://mac.eltima.com/cn/download-manager.html) 下载工具~~
 
 [FileZilla](https://filezilla-project.org/) Ftp工具
 
@@ -65,7 +67,7 @@ date: 2016-08-10 15:29:00
 
 [kindle](https://www.amazon.cn/gp/digital/fiona/kcp-landing-page/ref=sd_allcat_firetab_l3_f98948)
 
-[popclip](https://pilotmoon.com/popclip/)选择文字弹出操作浮层
+~~[popclip](https://pilotmoon.com/popclip/)选择文字弹出操作浮层~~
 
 
 
