@@ -7,6 +7,8 @@ date: 2016-08-16 11:24:00
 [前端库汇总](https://www.awesomes.cn)
 [github前端资源](https://github.com/helloqingfeng/Awsome-Front-End-learning-resource)
 [前端资源汇总](https://github.com/helloqingfeng/Awsome-Front-End-learning-resource)
+[前端知识体系](http://www.cnblogs.com/sb19871023/p/3894452.html)
+[前端资源汇集](https://segmentfault.com/a/1190000004978770)
 ## js
 ### angular
 [thoughtram](http://blog.thoughtram.io/)
