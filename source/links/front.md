@@ -22,6 +22,11 @@ date: 2016-08-16 11:24:00
 [使用React、Node.js、MongoDB、Socket.IO开发一个角色投票应用](http://idlelife.org/archives/977)
 [awesome-react-components](https://github.com/brillout/awesome-react-components)
 
+### vue.js
+[awesome-vue](https://github.com/vuejs/awesome-vue)
+
+
+
 ## css
 ### 模式
 [BEM](https://en.bem.info/)
