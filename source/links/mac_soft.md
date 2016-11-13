@@ -74,7 +74,7 @@ date: 2016-08-10 15:29:00
 
 ## 使用homebrew安装的软件列表
 ```
-brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie
+brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn
 brew cask install java
 ```
 [tomcat](https://tomcat.apache.org/)
@@ -93,7 +93,7 @@ brew cask install java
 
 [httpie](http://httpie.org)
 
-
+[yarn](https://yarnpkg.com/) 类似npm
 
 
 
