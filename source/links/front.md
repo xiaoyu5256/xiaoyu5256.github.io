@@ -25,6 +25,9 @@ date: 2016-08-16 11:24:00
 ### vue.js
 [awesome-vue](https://github.com/vuejs/awesome-vue)
 
+### 工具
+[前端工具集](http://tooling.github.io/book-of-modern-frontend-tooling/index.html)
+
 
 
 ## css
