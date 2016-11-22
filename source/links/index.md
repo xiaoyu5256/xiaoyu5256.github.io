@@ -72,7 +72,7 @@ date: 2016-02-17 08:16:00
 [运维生存时间](http://www.ttlsa.com/)
 [supervisord进程管理](http://supervisord.org/)
 [知乎docker资料整理](https://zhuanlan.zhihu.com/p/23508637)
-
+[devopsbookmark](http://www.devopsbookmarks.com/)
 ### 综合
 [http://www.composingprograms.com/](http://www.composingprograms.com/)
 [awesome](https://github.com/sindresorhus/awesome)
