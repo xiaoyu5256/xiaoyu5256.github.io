@@ -54,7 +54,7 @@ mysqldump -uroot -ppassword dbname > dbname-backup-$(date +%Y%m%d).sql
 
 ##授权并创建用户
 ```bash
-grant all on icms.* to root@'localhost' identified by 'pass';
+grant all on dbname.* to root@'localhost' identified by 'pass';
 flush privileges;
 ```
 
