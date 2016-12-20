@@ -42,23 +42,23 @@ tags:
     Enter password: <输入新设的密码newpassword> 
     mysql> SET PASSWORD = PASSWORD('newpasswd');
 ```
-##导出csv文件
+## 导出csv文件
 ```shell
 
     mysql icms -uroot -e "SELECT column AS '列名' FROM table  " >bond.xls
 ```
-##导出数据库
+## 导出数据库
 ```bash
 mysqldump -uroot -ppassword dbname > dbname-backup-$(date +%Y%m%d).sql
 ```
 
-##授权并创建用户
+## 授权并创建用户
 ```bash
 grant all on dbname.* to root@'localhost' identified by 'pass';
 flush privileges;
 ```
 
-##删除用户
+## 删除用户
 ```bash
 drop user user@'%';
 ```
