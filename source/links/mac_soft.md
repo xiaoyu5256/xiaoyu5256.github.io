@@ -96,6 +96,9 @@ brew cask install java
 [yarn](https://yarnpkg.com/) 类似npm
 
 
-
+## 使用pip安装软件
+```
+pip install landslide
+```
 
 
