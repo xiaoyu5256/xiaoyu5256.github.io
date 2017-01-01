@@ -67,6 +67,9 @@ date: 2016-02-17 08:16:00
 ### shell
 [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
 
+### scheme
+[SICP 解题集](http://sicp.readthedocs.io/en/latest/)
+
 ### 运维
 [远程执行命令行](http://www.fabfile.org/)
 [ansible](https://www.ansible.com/)
