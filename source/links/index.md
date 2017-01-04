@@ -67,6 +67,9 @@ date: 2016-02-17 08:16:00
 ### shell
 [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
 
+### scheme
+[SICP 解题集](http://sicp.readthedocs.io/en/latest/)
+
 ### 运维
 [远程执行命令行](http://www.fabfile.org/)
 [ansible](https://www.ansible.com/)
@@ -78,7 +81,12 @@ date: 2016-02-17 08:16:00
 [http://www.composingprograms.com/](http://www.composingprograms.com/)
 [awesome](https://github.com/sindresorhus/awesome)
 [30 天学习 30 种新技术系列](http://www.jianshu.com/p/96b45ee9139f)
-[30 天学习 30 种新技术系列--原文](https://blog.openshift.com/learnin-30-technologies-in-30-days-a-developer-challenge/) [52-technologies-in-2016](https://github.com/shekhargulati/52-technologies-in-2016) [A闪网](http://www.ashan.org/) ## 计算机基础 ### 网络 [一站式学习Wireshark](https://community.emc.com/thread/194901?start=0&tstart=0)
+[30 天学习 30 种新技术系列--原文](https://blog.openshift.com/learnin-30-technologies-in-30-days-a-developer-challenge/) [52-technologies-in-2016](https://github.com/shekhargulati/52-technologies-in-2016) 
+[A闪网](http://www.ashan.org/)
+
+## 计算机基础 
+### 网络 
+[一站式学习Wireshark](https://community.emc.com/thread/194901?start=0&tstart=0)
 
 ### 存储
 [存储基础知识](https://community.emc.com/thread/176852)
