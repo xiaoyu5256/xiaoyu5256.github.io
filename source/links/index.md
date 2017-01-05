@@ -60,7 +60,7 @@ date: 2016-02-17 08:16:00
 [intermediatePython中文翻译](https://github.com/eastlakeside/interpy-zh)
 [fullstackpython](https://www.fullstackpython.com/)
 [tkinterbook](http://effbot.org/tkinterbook/)
-
+[awesome python](https://awesome-python.com/)
 ### c语言
 [你是如何学习 Linux 编程的？](https://www.zhihu.com/question/20730157)
 
