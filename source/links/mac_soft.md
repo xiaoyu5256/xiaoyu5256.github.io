@@ -98,7 +98,9 @@ brew cask install java
 
 ## 使用pip安装软件
 ```
-pip install landslide
+pip install landslide unp
 ```
+[landslide](https://github.com/adamzap/landslide) markdown编写ppt
+[unp](https://github.com/mitsuhiko/unp) 解压主流压缩包
 
 
