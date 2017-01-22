@@ -27,6 +27,7 @@ date: 2016-02-17 08:16:00
 [docker](https://www.docker.com/)
 [awesome-docker](https://veggiemonk.github.io/awesome-docker/)
 [docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet)
+[docker-resources](https://github.com/hangyan/docker-resources/blob/master/README_zh.md)
 [vagrant](https://www.vagrantup.com/)
 
 ### 打包工具
