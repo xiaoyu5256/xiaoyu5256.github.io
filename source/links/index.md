@@ -43,6 +43,7 @@ date: 2016-02-17 08:16:00
 [我的Mac上软件集](mac_soft)
 [rclone云盘文件同步](https://github.com/ncw/rclone)
 [chocolatey](https://chocolatey.org/install) window下包管理工具
+[ilspy](http://ilspy.net/) C#反编译工具
 
 
 ## 中间件
