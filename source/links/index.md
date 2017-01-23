@@ -25,6 +25,9 @@ date: 2016-02-17 08:16:00
 
 ### 容器和虚拟机
 [docker](https://www.docker.com/)
+[awesome-docker](https://veggiemonk.github.io/awesome-docker/)
+[docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet)
+[docker-resources](https://github.com/hangyan/docker-resources/blob/master/README_zh.md)
 [vagrant](https://www.vagrantup.com/)
 
 ### 打包工具
@@ -85,6 +88,7 @@ date: 2016-02-17 08:16:00
 [30 天学习 30 种新技术系列](http://www.jianshu.com/p/96b45ee9139f)
 [30 天学习 30 种新技术系列--原文](https://blog.openshift.com/learnin-30-technologies-in-30-days-a-developer-challenge/) [52-technologies-in-2016](https://github.com/shekhargulati/52-technologies-in-2016) 
 [A闪网](http://www.ashan.org/)
+[GitHub上整理的一些工具](https://segmentfault.com/q/1010000002404545)
 
 ## 计算机基础 
 ### 网络 
