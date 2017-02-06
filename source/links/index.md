@@ -123,3 +123,4 @@ date: 2016-02-17 08:16:00
 [开源软件架构-500L](http://aosabook.org/en/500L/)
 [树袋熊藏书阁](http://book.hanzheng.info/)
 [经典编程书籍大全](https://github.com/jobbole/awesome-programming-books)
+[计算机电子书](http://it-ebooks.flygon.net/)
