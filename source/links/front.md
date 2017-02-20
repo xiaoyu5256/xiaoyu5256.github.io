@@ -13,7 +13,7 @@ date: 2016-08-16 11:24:00
 ### angular
 [thoughtram](http://blog.thoughtram.io/)
 [angularjs编码规范](https://github.com/johnpapa/angular-styleguide)
-
+[clean code js](https://github.com/ryanmcdermott/clean-code-javascript)
 ### react
 [awesome react](https://github.com/enaqx/awesome-react)
 [react 资源](http://huli.logdown.com/posts/276040-react-resource-consolidation)
