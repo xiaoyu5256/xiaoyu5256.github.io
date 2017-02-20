@@ -81,6 +81,7 @@ date: 2016-02-17 08:16:00
 [运维生存时间](http://www.ttlsa.com/)
 [supervisord进程管理](http://supervisord.org/)
 [devopsbookmark](http://www.devopsbookmarks.com/)
+
 ### 综合
 [http://www.composingprograms.com/](http://www.composingprograms.com/)
 [awesome](https://github.com/sindresorhus/awesome)
@@ -88,6 +89,7 @@ date: 2016-02-17 08:16:00
 [30 天学习 30 种新技术系列--原文](https://blog.openshift.com/learnin-30-technologies-in-30-days-a-developer-challenge/) [52-technologies-in-2016](https://github.com/shekhargulati/52-technologies-in-2016) 
 [A闪网](http://www.ashan.org/)
 [GitHub上整理的一些工具](https://segmentfault.com/q/1010000002404545)
+[程序员资料](https://github.com/stanzhai/be-a-professional-programmer)
 
 ## 计算机基础 
 ### 网络 
@@ -101,6 +103,7 @@ date: 2016-02-17 08:16:00
 [gitbook](https://www.gitbook.com)
 [dabblet在线页面编辑](http://dabblet.com/)
 [goodreads](https://www.goodreads.com/)
+
 ### 博客
 [Lea Verou](http://lea.verou.me/) 《css secrets》作者
 [arganzheng's Weblog](http://blog.arganzheng.me/)

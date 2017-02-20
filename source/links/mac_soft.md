@@ -69,7 +69,7 @@ date: 2016-08-10 15:29:00
 
 ~~[popclip](https://pilotmoon.com/popclip/)选择文字弹出操作浮层~~
 
-
+[coderunner](https://coderunnerapp.com/) 脚本编写工具
 
 
 ## 使用homebrew安装的软件列表
@@ -95,7 +95,6 @@ brew cask install java
 
 [yarn](https://yarnpkg.com/) 类似npm
 
-[coderunner](https://coderunnerapp.com/) 脚本编写工具
 
 ## 使用pip安装软件
 ```
