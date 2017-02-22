@@ -10,6 +10,7 @@ date: 2016-08-16 11:24:00
 [前端知识体系](http://www.cnblogs.com/sb19871023/p/3894452.html)
 [前端资源汇集](https://segmentfault.com/a/1190000004978770)
 [Front-end-tutorial](https://github.com/windiest/Front-end-tutorial)
+[前端资源](http://www.jianshu.com/p/6cb49271cd2a#)
 ## js
 ### angular
 [thoughtram](http://blog.thoughtram.io/)
