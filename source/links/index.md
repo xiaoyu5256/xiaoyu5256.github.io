@@ -66,6 +66,7 @@ date: 2016-02-17 08:16:00
 [fullstackpython](https://www.fullstackpython.com/)
 [tkinterbook](http://effbot.org/tkinterbook/)
 [awesome python](https://awesome-python.com/)
+[Python最佳实践指南](https://pythonguidecn.readthedocs.io/zh/latest/)
 ### c语言
 [你是如何学习 Linux 编程的？](https://www.zhihu.com/question/20730157)
 
