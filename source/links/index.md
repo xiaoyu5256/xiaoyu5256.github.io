@@ -69,6 +69,9 @@ date: 2016-02-17 08:16:00
 ### c语言
 [你是如何学习 Linux 编程的？](https://www.zhihu.com/question/20730157)
 
+### php
+[php资料汇总](https://wangdongyang.github.io/2015/07/24/PHP%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/)
+
 ### shell
 [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
 
