@@ -43,6 +43,10 @@ date: 2016-08-10 15:29:00
 
 [VLC](http://www.videolan.org/vlc/)开源视频播放器
 
+[freedownload](http://www.freedownloadmanager.org/)下载工具
+
+[Listen1](https://listen1.github.io/listen1/) 音乐
+
 [eudic](http://www.eudic.net/eudic/mac_dictionary.aspx)
 
 [owncloud](https://owncloud.org/install/#install-clients) 自建云盘的客户端
