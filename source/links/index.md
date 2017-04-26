@@ -125,6 +125,7 @@ date: 2016-02-17 08:16:00
 [Benjamin Winterberg](http://winterbe.com/) 关于java&js
 [funhacks](https://funhacks.net/) 关于python
 [WKLKEN BUILDING](http://www.wklken.me/) 关于python vim linux
+[kamranahmed](http://kamranahmed.info/) 关于web等
 
 ### 书籍
 [编程书籍github](https://github.com/vhf/free-programming-books)
