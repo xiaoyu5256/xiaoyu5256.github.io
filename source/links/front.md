@@ -43,6 +43,7 @@ date: 2016-08-16 11:24:00
 
 ### 工具
 [cssreference](http://cssreference.io/)
+[gradient-editor](http://www.colorzilla.com/gradient-editor/) css渐变在线生成
 ### 博客
 [CSS魔法](http://csswizardry.com/)
 [PHILIP WALTON博客](https://philipwalton.com/)
