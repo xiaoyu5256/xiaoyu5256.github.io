@@ -75,6 +75,9 @@ date: 2016-08-10 15:29:00
 
 [coderunner](https://coderunnerapp.com/) 脚本编写工具
 
+[virtualbox](https://www.virtualbox.org/wiki/Downloads)
+
+[vagrant](https://www.vagrantup.com/)
 
 ## 使用homebrew安装的软件列表
 ```
