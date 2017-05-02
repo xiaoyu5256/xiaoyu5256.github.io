@@ -102,9 +102,10 @@ brew cask install java
 
 ## 使用pip安装软件
 ```
-pip install landslide unp
+pip install landslide unp csvkit
 ```
 [landslide](https://github.com/adamzap/landslide) markdown编写ppt
 [unp](https://github.com/mitsuhiko/unp) 解压主流压缩包
+[csvkit](http://csvkit.readthedocs.io/en/1.0.2/index.html) csv处理工具
 
 
