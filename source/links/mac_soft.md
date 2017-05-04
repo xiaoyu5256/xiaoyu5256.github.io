@@ -78,7 +78,7 @@ date: 2016-08-10 15:29:00
 
 ## 使用homebrew安装的软件列表
 ```
-brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn
+brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn axel
 brew cask install java
 ```
 [tomcat](https://tomcat.apache.org/)
@@ -98,6 +98,8 @@ brew cask install java
 [httpie](http://httpie.org)
 
 [yarn](https://yarnpkg.com/) 类似npm
+
+[axel](http://axel.alioth.debian.org/) 多线程下载，类似mwget
 
 
 ## 使用pip安装软件

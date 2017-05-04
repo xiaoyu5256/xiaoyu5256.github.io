@@ -48,6 +48,7 @@ date: 2016-02-17 08:16:00
 [chocolatey](https://chocolatey.org/install) window下包管理工具
 [ilspy](http://ilspy.net/) C#反编译工具
 [爬虫工具](爬虫工具)
+[有哪些命令行的软件堪称神器？](https://www.zhihu.com/question/59227720)
 
 ## 中间件
 ### 消息队列
