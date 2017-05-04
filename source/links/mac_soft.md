@@ -78,7 +78,7 @@ date: 2016-08-10 15:29:00
 
 ## 使用homebrew安装的软件列表
 ```
-brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn axel
+brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn axel thefuck
 brew cask install java
 ```
 [tomcat](https://tomcat.apache.org/)
@@ -100,6 +100,8 @@ brew cask install java
 [yarn](https://yarnpkg.com/) 类似npm
 
 [axel](http://axel.alioth.debian.org/) 多线程下载，类似mwget
+
+[thefuck](https://github.com/nvbn/thefuck) 命令错误纠错
 
 
 ## 使用pip安装软件
