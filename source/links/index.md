@@ -126,6 +126,7 @@ date: 2016-02-17 08:16:00
 [funhacks](https://funhacks.net/) 关于python
 [WKLKEN BUILDING](http://www.wklken.me/) 关于python vim linux
 [kamranahmed](http://kamranahmed.info/) 关于web等
+[运维的一些手册](http://www.jinbuguo.com/)
 
 ### 书籍
 [编程书籍github](https://github.com/vhf/free-programming-books)
