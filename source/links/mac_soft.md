@@ -13,7 +13,7 @@ date: 2016-08-10 15:29:00
 
 [oh my zsh](http://ohmyz.sh/)拥有大量的有用的功能，助手，插件，主题，等特性的命令行工具插件
 
-[go2shell](https://itunes.apple.com/us/app/go2shell/id445770608?mt=12)
+[go2shell](http://zipzapmac.com/go2shell)
 
 [Beyond Compare](http://www.scootersoftware.com/download.php) 文件比较(收费)
 
