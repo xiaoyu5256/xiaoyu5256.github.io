@@ -13,6 +13,8 @@ date: 2016-08-10 15:29:00
 
 [oh my zsh](http://ohmyz.sh/)拥有大量的有用的功能，助手，插件，主题，等特性的命令行工具插件
 
+[go2shell](https://itunes.apple.com/us/app/go2shell/id445770608?mt=12)
+
 [Beyond Compare](http://www.scootersoftware.com/download.php) 文件比较(收费)
 
 [ShiftIt](https://github.com/fikovnik/ShiftIt) 窗口位置和大小管理软件
@@ -81,7 +83,7 @@ date: 2016-08-10 15:29:00
 
 ## 使用homebrew安装的软件列表
 ```
-brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn axel thefuck jq
+brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn axel thefuck jq 
 brew cask install java
 ```
 [tomcat](https://tomcat.apache.org/)
@@ -107,6 +109,8 @@ brew cask install java
 [thefuck](https://github.com/nvbn/thefuck) 命令错误纠错
 
 [jq](https://github.com/stedolan/jq) json处理
+
+
 
 
 ## 使用pip安装软件
