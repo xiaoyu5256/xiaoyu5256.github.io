@@ -3,6 +3,7 @@ date: 2016-08-16 11:24:00
 ---
 
 ## 综合
+[web前端导航](http://www.alloyteam.com/nav/)
 [AlloyTeam前端代码规范](http://alloyteam.github.io/CodeGuide/)
 [前端库汇总](https://www.awesomes.cn)
 [github前端资源](https://github.com/helloqingfeng/Awsome-Front-End-learning-resource)
