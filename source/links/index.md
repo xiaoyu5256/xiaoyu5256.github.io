@@ -133,7 +133,7 @@ date: 2016-02-17 08:16:00
 [编程书籍github](https://github.com/vhf/free-programming-books)
 [编程类开放书籍荟萃](http://www.linuxstory.org/free-chinese-programming-books/)
 [程序员必读书单 1.0](http://lucida.me/blog/developer-reading-list/)
-[开源软件架构-翻译](http://www.ituring.com.cn/article/13057)
+[开源软件架构-翻译](http://www.ituring.com.cn/book/1143)
 [开源软件架构网站](http://aosabook.org/en/index.html)
 [开源软件架构-500L](http://aosabook.org/en/500L/)
 [树袋熊藏书阁](http://book.hanzheng.info/)
