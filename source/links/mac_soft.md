@@ -81,6 +81,9 @@ date: 2016-08-10 15:29:00
 
 [vagrant](https://www.vagrantup.com/)
 
+[鼠须管](http://rime.im/) 输入法
+
+
 ## 使用homebrew安装的软件列表
 ```
 brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn axel thefuck jq 
