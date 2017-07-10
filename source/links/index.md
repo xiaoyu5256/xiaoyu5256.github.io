@@ -100,6 +100,7 @@ date: 2016-02-17 08:16:00
 [GitHub上整理的一些工具](https://segmentfault.com/q/1010000002404545)
 [程序员资料](https://github.com/stanzhai/be-a-professional-programmer)
 [tutorialspoint](https://www.tutorialspoint.com/) 各种入门指南
+[learnxinminutes](https://learnxinyminutes.com/)
 
 ## 计算机基础 
 ### 网络 
