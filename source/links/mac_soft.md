@@ -83,6 +83,7 @@ date: 2016-08-10 15:29:00
 
 [鼠须管](http://rime.im/) 输入法
 
+[visual-paradigm](https://www.visual-paradigm.com/) uml画图
 
 ## 使用homebrew安装的软件列表
 ```
