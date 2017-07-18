@@ -88,7 +88,7 @@ date: 2016-08-10 15:29:00
 ## 使用homebrew安装的软件列表
 ```
 brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn axel thefuck jq 
-brew cask install java
+brew cask install java wireshark
 ```
 [tomcat](https://tomcat.apache.org/)
 
@@ -114,6 +114,7 @@ brew cask install java
 
 [jq](https://github.com/stedolan/jq) json处理
 
+[wireshark](https://www.wireshark.org/#download) 
 
 
 
