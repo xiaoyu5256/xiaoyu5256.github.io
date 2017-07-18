@@ -85,6 +85,7 @@ date: 2016-08-10 15:29:00
 
 [visual-paradigm](https://www.visual-paradigm.com/) uml画图
 
+[cheatsheet](https://www.mediaatelier.com/CheatSheet/) 快捷键查看
 ## 使用homebrew安装的软件列表
 ```
 brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn axel thefuck jq 
