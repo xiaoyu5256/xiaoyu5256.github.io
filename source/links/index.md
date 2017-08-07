@@ -84,6 +84,9 @@ date: 2016-02-17 08:16:00
 ### scheme
 [SICP 解题集](http://sicp.readthedocs.io/en/latest/)
 
+### 人工智能
+[自然语言入门](https://github.com/JustFollowUs/Natural-Language-Processing)
+
 ### 运维
 [远程执行命令行](http://www.fabfile.org/)
 [ansible](https://www.ansible.com/)
