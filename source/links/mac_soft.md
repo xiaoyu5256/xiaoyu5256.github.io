@@ -31,6 +31,8 @@ date: 2016-08-10 15:29:00
 
 [Dash](https://kapeli.com/dash) 文档工具
 
+[todolist](https://todoist.com/mac) todolist
+
 [Jietu](http://jietu.qq.com/) 截图工具
 
 [chrome](https://www.google.com/chrome/browser/desktop/index.html)
