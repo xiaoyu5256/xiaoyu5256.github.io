@@ -61,6 +61,7 @@ date: 2016-02-17 08:16:00
 
 ### python
 [知乎－Python 的练手项目有哪些值得推荐？](https://www.zhihu.com/question/29372574?utm_campaign=official_account&utm_source=weibo&utm_medium=zhihu&utm_content=question)
+[哪些 Python 库让你相见恨晚？](https://www.zhihu.com/question/24590883)
 [The Elements of Python Style](https://github.com/amontalenti/elements-of-python-style)
 [intermediatePython](https://github.com/yasoob/intermediatePython)
 [intermediatePython中文翻译](https://github.com/eastlakeside/interpy-zh)
