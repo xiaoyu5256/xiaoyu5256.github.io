@@ -81,7 +81,7 @@ tags:
     ORACLE_HOME=$ORACLE_BASE/product/11.2.0
     ORACLE_SID=ora11
     PATH=$PATH:$ORACLE_HOME/bin
-    export ORACLE_BASE ORACLE_HOME ORACLE_SIDPATH
+    export ORACLE_BASE ORACLE_HOME ORACLE_SID PATH
     ```
 - 编辑静默安装响应文件
     ```
