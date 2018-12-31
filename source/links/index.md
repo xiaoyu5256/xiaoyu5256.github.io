@@ -58,6 +58,7 @@ date: 2016-02-17 08:16:00
 ### Java
 [Java资源大全中文版](https://github.com/jobbole/awesome-java-cn)
 [java8-tutorial](https://github.com/winterbe/java8-tutorial)
+[阿里java规范](https://github.com/alibaba/p3c)
 
 ### python
 [知乎－Python 的练手项目有哪些值得推荐？](https://www.zhihu.com/question/29372574?utm_campaign=official_account&utm_source=weibo&utm_medium=zhihu&utm_content=question)
@@ -92,6 +93,7 @@ date: 2016-02-17 08:16:00
 ### 运维
 [远程执行命令行](http://www.fabfile.org/)
 [ansible](https://www.ansible.com/)
+[Ansible中文权威指南](http://www.ansible.com.cn/)
 [运维生存时间](http://www.ttlsa.com/)
 [supervisord进程管理](http://supervisord.org/)
 [devopsbookmark](http://www.devopsbookmarks.com/)
@@ -138,6 +140,8 @@ date: 2016-02-17 08:16:00
 [技术世界](http://www.jasongj.com/) 关于大数据，数据库等
 [Format's Notes](http://fangjian0423.github.io/) 关于springboot spring
 [iflym](https://www.iflym.com/) 关于java，spring
+[Marijn Haverbeke](http://marijnhaverbeke.nl/blog/) 关于js，函数式
+
 ### 书籍
 [编程书籍github](https://github.com/vhf/free-programming-books)
 [编程类开放书籍荟萃](http://www.linuxstory.org/free-chinese-programming-books/)
