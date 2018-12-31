@@ -87,6 +87,7 @@ date: 2016-02-17 08:16:00
 
 ### 人工智能
 [自然语言入门](https://github.com/JustFollowUs/Natural-Language-Processing)
+[hankcs](http://www.hankcs.com/) 关于编程，机器学习，自然语言处理等
 
 ### 运维
 [远程执行命令行](http://www.fabfile.org/)
