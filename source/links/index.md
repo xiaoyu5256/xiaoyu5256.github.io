@@ -79,6 +79,9 @@ date: 2016-02-17 08:16:00
 ### php
 [php资料汇总](https://wangdongyang.github.io/2015/07/24/PHP%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/)
 
+### C++
+[conan](https://conan.io/) 包管理
+
 ### shell
 [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
 [bash-guide](https://github.com/Idnan/bash-guide)
