@@ -79,6 +79,9 @@ date: 2016-02-17 08:16:00
 ### php
 [php资料汇总](https://wangdongyang.github.io/2015/07/24/PHP%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/)
 
+### C++
+[conan](https://conan.io/) 包管理
+
 ### shell
 [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
 [bash-guide](https://github.com/Idnan/bash-guide)
@@ -108,7 +111,7 @@ date: 2016-02-17 08:16:00
 [程序员资料](https://github.com/stanzhai/be-a-professional-programmer)
 [tutorialspoint](https://www.tutorialspoint.com/) 各种入门指南
 [learnxinminutes](https://learnxinyminutes.com/)
-
+[project-based-learning](https://github.com/tuvtran/project-based-learning)
 ## 计算机基础 
 ### 网络 
 [一站式学习Wireshark](https://community.emc.com/thread/194901?start=0&tstart=0)
@@ -141,6 +144,7 @@ date: 2016-02-17 08:16:00
 [Format's Notes](http://fangjian0423.github.io/) 关于springboot spring
 [iflym](https://www.iflym.com/) 关于java，spring
 [Marijn Haverbeke](http://marijnhaverbeke.nl/blog/) 关于js，函数式
+[Jark's Blog](http://wuchong.me/) flink 相关
 
 ### 书籍
 [编程书籍github](https://github.com/vhf/free-programming-books)
