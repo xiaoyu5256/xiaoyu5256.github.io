@@ -33,6 +33,7 @@ date: 2016-02-17 08:16:00
 ### 打包工具
 [window安装程序制作](http://www.jrsoftware.org/isinfo.php)
 [Resource Hacker](http://angusj.com/resourcehacker/)修改器
+[graalvm](http://www.graalvm.org/) native-image编译成二进制，多语言通用虚拟机
 
 ### 常用工具
 [mwget](https://www.ttlsa.com/tools/mwget-get-file/)
