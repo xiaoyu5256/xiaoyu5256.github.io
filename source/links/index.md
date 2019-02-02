@@ -50,6 +50,7 @@ date: 2016-02-17 08:16:00
 [ilspy](http://ilspy.net/) C#反编译工具
 [爬虫工具](爬虫工具)
 [有哪些命令行的软件堪称神器？](https://www.zhihu.com/question/59227720)
+[reederapp](http://reederapp.com) rss阅读
 
 ## 中间件
 ### 消息队列
