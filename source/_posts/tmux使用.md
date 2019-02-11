@@ -22,7 +22,7 @@ r 强制重绘未脱离的会话
 
 ### 会话
 ```
-tmux new -s basic  新建会话
+tmux new -s basic  新建会话,basic为会话名称
 exit   退出会话
 tmux ls 列出会话
 tmux attach -t sessionid  进入会话
@@ -35,6 +35,7 @@ s 选择并切换会话；在同时开启了多个会话时使用
 
 ### 窗口
 ```
+tmux new -s basic -n shell 新建session名字为basic，窗口名字为shell
 c 创建新窗口
 & 关闭当前窗口
 数字键 切换至指定窗口
@@ -64,4 +65,5 @@ o 在当前窗口中选择下一面板
 } 向后置换当前面板
 Alt+o 逆时针旋转当前窗口的面板
 Ctrl+o 顺时针旋转当前窗口的面板
+Alt+方向键 调整面板大小
 ```
