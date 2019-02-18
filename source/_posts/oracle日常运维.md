@@ -47,6 +47,20 @@ expdp system/manage@sid DIRECTORY=dump_dir schemas=orguser dumpfile=dump.dmp
 impdp system/manage@sid directory=dump_dir dumpfile=dump.dmp  schemas=orguser remap_schema=orguser:newuser remap_tablespace=orgtable:newtable table_exists_action=replace logfile=impdp.log;
 ```
 
+### 查看进程执行的sql
+```
+SELECT sql_text FROM v$sqltext a WHERE (a.hash_value, a.address) IN
+(SELECT DECODE (sql_hash_value,0, prev_hash_value,sql_hash_value ),
+  DECODE (sql_hash_value, 0, prev_sql_addr, sql_address)
+  FROM v$session b
+  WHERE b.paddr =
+    (SELECT addr FROM v$process c WHERE c.spid='$pid'
+      )
+      ) ORDER BY piece ASC;
+```
+
+
+
 > 参考
 > [Oracle exp/expdp imp/impdp导入导出数据](http://greensky.blog.51cto.com/3347654/1377202)
 
