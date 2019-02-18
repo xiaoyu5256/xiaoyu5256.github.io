@@ -58,8 +58,26 @@ SELECT sql_text FROM v$sqltext a WHERE (a.hash_value, a.address) IN
       )
       ) ORDER BY piece ASC;
 ```
+### 查看资源消耗最多的sql
+```
+select b.username username,a.disk_reads reads,
+    a.executions exec,a.disk_reads/decode(a.executions,0,1,a.executions) rds_exec_ratio,
+        a.sql_text Statement
+        from  v$sqlarea a,dba_users b
+        where a.parsing_user_id=b.user_id
+         and a.disk_reads > 100000
+         order by a.disk_reads desc;
+```
 
-
+### 查看磁盘消耗最多的sql
+```
+select disk_reads,sql_text
+from (select sql_text,disk_reads,
+   dense_rank() over
+        (order by disk_reads desc) disk_reads_rank
+           from v$sql)
+           where disk_reads_rank <=5;
+```
 
 > 参考
 > [Oracle exp/expdp imp/impdp导入导出数据](http://greensky.blog.51cto.com/3347654/1377202)
