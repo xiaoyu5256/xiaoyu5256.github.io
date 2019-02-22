@@ -94,7 +94,7 @@ date: 2016-08-10 15:29:00
 [cheatsheet](https://www.mediaatelier.com/CheatSheet/) 快捷键查看
 ## 使用homebrew安装的软件列表
 ```
-brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn axel thefuck jq 
+brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn axel thefuck jq hexyl
 brew cask install java wireshark
 ```
 [tomcat](https://tomcat.apache.org/)
@@ -121,8 +121,9 @@ brew cask install java wireshark
 
 [jq](https://github.com/stedolan/jq) json处理
 
-[wireshark](https://www.wireshark.org/#download) 
+[wireshark](https://www.wireshark.org/#download)
 
+[hexyl](https://github.com/sharkdp/hexyl) 查看二进制
 
 
 ## 使用pip安装软件
