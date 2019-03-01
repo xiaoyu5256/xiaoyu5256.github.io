@@ -95,7 +95,7 @@ date: 2016-08-10 15:29:00
 ## 使用homebrew安装的软件列表
 ```
 brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn axel thefuck jq hexyl
-brew cask install java wireshark
+brew cask install java wireshark balenaetcher
 ```
 [tomcat](https://tomcat.apache.org/)
 
@@ -125,7 +125,7 @@ brew cask install java wireshark
 
 [hexyl](https://github.com/sharkdp/hexyl) 查看二进制
 
-
+[etcher](https://github.com/balena-io/etcher) 镜像制作
 ## 使用pip安装软件
 ```
 pip install landslide unp csvkit
