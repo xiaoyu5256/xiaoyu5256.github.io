@@ -77,6 +77,8 @@ date: 2016-08-10 15:29:00
 
 [mindnode](https://mindnode.com/) 思维导图
 
+[xmind](https://www.xmind.cn/) 思维导图
+
 [kindle](https://www.amazon.cn/gp/digital/fiona/kcp-landing-page/ref=sd_allcat_firetab_l3_f98948)
 
 ~~[popclip](https://pilotmoon.com/popclip/)选择文字弹出操作浮层~~
