@@ -59,6 +59,8 @@ date: 2016-08-10 15:29:00
 
 [postico](https://eggerapps.at/postico/) postgre客户端
 
+[sequel pro](https://sequelpro.com/) mysql客户端
+
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) IDE
 
 ~~[BetterZip 3](https://macitbetter.com/) 压缩解压缩工具支持格式 ZIP、TAR、TGZ、TBZ、TXZ (new)、7-ZIP、RAR~~
