@@ -57,7 +57,7 @@ date: 2016-08-10 15:29:00
 
 ~~[Navicat Premiumn](https://www.navicat.com/) 数据库管理工具(收费)~~
 
-[postico](https://eggerapps.at/postico/) Mysql客户端
+[postico](https://eggerapps.at/postico/) postgre客户端
 
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) IDE
 
