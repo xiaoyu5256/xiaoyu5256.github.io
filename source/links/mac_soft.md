@@ -107,7 +107,7 @@ date: 2016-08-10 15:29:00
 ## 使用homebrew安装的软件列表
 ```
 brew install tomcat maven vim ssh-copy-id node pandoc tmux httpie yarn axel thefuck jq hexyl
-brew cask install java wireshark balenaetcher
+brew cask install java wireshark balenaetcher db-browser-for-sqlite
 ```
 [tomcat](https://tomcat.apache.org/)
 
