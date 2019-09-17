@@ -66,9 +66,11 @@
                             '<td><a onclick="collect('+book.isbn13+')" >收藏</a>&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="uncollect('+book.isbn13+')">取消收藏</a></td>' +
                         '</tr>'
             }).join('');
-            $("#zhuanzhuan_table").append('<div><a onclick="pass_all()">已看</a></div><table>'+tableRows+'</table>')
+            $("#zhuanzhuan_table").html('<div><a onclick="pass_all()">已看</a></div><table>'+tableRows+'</table>')
         };
         var fetch_book = function (books,cateId,pageNum) {
+            $("#zhuanzhuan_table").html('<div>cateId:'+cateId+',pageNum'+pageNum+'</div>')
+
             $.ajax({
                 url:'https://app.zhuanzhuan.com/zzopen/sellbook/free_book_list?cateId='+cateId+'&pageNum='+pageNum+'&pageSize=50',
                 type: "GET",
