@@ -82,11 +82,11 @@
                 return !books_isbn[v.isbn13];
             });
             if(!new_books||new_books.length==0){
-                setTimeout(function () {
-                    $.each(cateIds,function (index,cateId) {
-                        fetch_book(books,cateId,1);
-                    });
-                },60000)
+                // setTimeout(function () {
+                //     $.each(cateIds,function (index,cateId) {
+                //         fetch_book(books,cateId,1);
+                //     });
+                // },60000)
 
             }
         }
