@@ -82,9 +82,12 @@
                 return !books_isbn[v.isbn13];
             });
             if(!new_books||new_books.length==0){
-                $.each(cateIds,function (index,cateId) {
-                    fetch_book(books,cateId,1);
-                });
+                setTimeout(function () {
+                    $.each(cateIds,function (index,cateId) {
+                        fetch_book(books,cateId,1);
+                    });
+                },60000)
+
             }
         }
         var fetch_book = function (books,cateId,pageNum) {
