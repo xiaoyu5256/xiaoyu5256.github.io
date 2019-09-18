@@ -5,9 +5,6 @@
     <title>zhuanzhuan</title>
 </head>
 <body>
-<audio class="my_audio" controls style="display: none" >
-    <source src="http://s.aigei.com/pvaud_mp3/aud/mp3/5c/5c64f57207a9493cae087556ea9f07d9.mp3?download/%E5%92%B3%E5%92%B3%E3%80%82_%E7%88%B1%E7%BB%99%E7%BD%91_aigei_com.mp3&e=1568834580&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:Bm249l2VboKLnEOT6qvIWJxc4Dc=" type="audio/mpeg">
-</audio>
 <div id="zhuanzhuan_msg" style="margin: 10px 10px;"></div>
 
 <div id="zhuanzhuan_table"></div>
@@ -51,7 +48,6 @@
         alert("已看");
     }
     $(function () {
-        $(".my_audio").trigger('load');
         var cateIds=[2113013,2113014,2113015,2113016,2113017,2113018,2113019,100];
         // var cateIds=[2113018];
         var key = "book_isbn13_passed";
@@ -107,7 +103,9 @@
                                 books.push(book);
                                 books_exist[book.isbn13]=1;
                                 if(!books_isbn[book.isbn13]){
-                                    $(".my_audio").trigger('play');
+                                    var aduio = new Audio("http://s.aigei.com/pvaud_mp3/aud/mp3/5c/5c64f57207a9493cae087556ea9f07d9.mp3?download/%E5%92%B3%E5%92%B3%E3%80%82_%E7%88%B1%E7%BB%99%E7%BD%91_aigei_com.mp3&e=1568834580&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:Bm249l2VboKLnEOT6qvIWJxc4Dc=");
+                                    aduio.pause();
+                                    aduio.play();
                                 }
                                 if(books.length<500){
                                     render_books(books);
