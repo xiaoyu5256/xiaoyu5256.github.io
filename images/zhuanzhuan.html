@@ -117,7 +117,9 @@
                         });
 
                         pageNum++;
-                        fetch_book(books,cateId,pageNum);
+                        setTimeout(function () {
+                            fetch_book(books,cateId,pageNum);
+                        },200);
                     }else{
                         if(cateId==cateIds[cateIds.length-1]){
                             render_books(books);
