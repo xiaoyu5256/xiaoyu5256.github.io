@@ -5,22 +5,25 @@
     <title>zhuanzhuan</title>
 </head>
 <body>
-<div id="zhuanzhuan_msg"></div>
+<audio class="my_audio" controls style="display: none" >
+    <source src="http://s.aigei.com/pvaud_mp3/aud/mp3/5c/5c64f57207a9493cae087556ea9f07d9.mp3?download/%E5%92%B3%E5%92%B3%E3%80%82_%E7%88%B1%E7%BB%99%E7%BD%91_aigei_com.mp3&e=1568834580&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:Bm249l2VboKLnEOT6qvIWJxc4Dc=" type="audio/mpeg">
+</audio>
+<div id="zhuanzhuan_msg" style="margin: 10px 10px;"></div>
 
 <div id="zhuanzhuan_table"></div>
 <script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <script>
     var books = [];
-    function collect(isbn13,title){
+    function collect(dom,isbn13,title){
         var key = "book_isbn13_collected";
         var books_isbn = JSON.parse(localStorage.getItem(key))||{};
         books_isbn[isbn13]=1;
         localStorage.setItem(key,JSON.stringify(books_isbn));
-        $(this).parent().html('<a onclick="uncollect('+isbn13+',\''+title+'\')" >取消收藏</a>');
+        $(dom).parent().html('<a onclick="uncollect(this,'+isbn13+',\''+title+'\')" >取消收藏</a>');
         alert("已收藏"+title);
 
     }
-    function uncollect(isbn13,title){
+    function uncollect(dom,isbn13,title){
         var key = "book_isbn13_collected";
         var books_isbn = JSON.parse(localStorage.getItem(key))||{};
         delete books_isbn[isbn13];
@@ -30,7 +33,7 @@
         var books_passed = JSON.parse(localStorage.getItem(key))||{};
         books_passed[isbn13]=1;
         localStorage.setItem(key,JSON.stringify(books_passed));
-        $(this).parent().html('<a onclick="collect('+isbn13+',\''+title+'\')" >收藏</a>');
+        $(dom).parent().html('<a onclick="collect(this,'+isbn13+',\''+title+'\')" >收藏</a>');
         alert("已取消收藏"+title);
 
     }
@@ -48,12 +51,14 @@
         alert("已看");
     }
     $(function () {
+        $(".my_audio").trigger('load');
         var cateIds=[2113013,2113014,2113015,2113016,2113017,2113018,2113019,100];
         // var cateIds=[2113018];
         var key = "book_isbn13_passed";
         var books_passed = JSON.parse(localStorage.getItem(key))||{};
         var books_exist = {};
         var render_books = function (books) {
+            var ismobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             books.sort(function(a, b) {
                 return (a.sellPrice < b.sellPrice) ? 1 : -1;
             });
@@ -61,22 +66,35 @@
             var books_isbn = JSON.parse(localStorage.getItem(key))||{};
             var tableRows = $.map(books,function (book) {
                 return  '<tr>' +
-                            '<td><img src="'+book.cover+'" width="80" /></td>' +
+                             (ismobile?'':'<td><img src="'+book.cover+'" width="80" /></td>') +
                             '<td width="300"><a href="https://m.zhuanzhuan.com/open/ZZBook/index.html?source=goods&webview=zzn&repeatrequest=true&channel=zzbook&metric=P4HDiA9Saaeh7FPLToihqw761123pc&infoId=1132315831909859338#/Book/Detail?tmp=1560529464957&fromChannel=tscp&source=goods&webview=zzn&repeatrequest=true&channel=zzbook&metric=P4HDiA9Saaeh7FPLToihqw761123pc&infoId='+book.infoId+'" target="_blank">'+book.title+'</a></td>' +
                             '<td width="100">'+book.publisher+'</td>' +
                             '<td width="200">'+(book.authors&&book.authors.join(","))+'</td>' +
-                            '<td width="100">'+book.sellPrice/100+'</td>' +
+                            '<td width="50">'+book.sellPrice/100+'</td>' +
                             '<td width="100">'+book.pubdate+'</td>' +
                             '<td>'+book.stock+'</td>' +
                             '<td width="100"><a href="https://book.douban.com/isbn/'+book.isbn13+'" target="_blank">豆瓣：'+book.doubanRate+'</a></td>' +
-                            '<td width="100" >'+(!books_isbn[book.isbn13]?'<a onclick="collect('+book.isbn13+',\''+book.title+'\')" >收藏</a>':'<a onclick="uncollect('+book.isbn13+',\''+book.title+'\')">取消收藏</a>')+'</td>' +
+                            '<td width="100" >'+(!books_isbn[book.isbn13]?'<a onclick="collect(this,'+book.isbn13+',\''+book.title+'\')" >收藏</a>':'<a onclick="uncollect(this,'+book.isbn13+',\''+book.title+'\')">取消收藏</a>')+'</td>' +
                         '</tr>'
             }).join('');
             $("#zhuanzhuan_table").html('<div><a onclick="pass_all()">已看</a></div><table>'+tableRows+'</table>')
         };
+        var check_next_fetch = function (books) {
+            var key = "book_isbn13_collected";
+            var books_isbn = JSON.parse(localStorage.getItem(key))||{};
+            var new_books = $.grep(books, function(v) {
+                return !books_isbn[v.isbn13];
+            });
+            if(!new_books||new_books.length==0){
+                $.each(cateIds,function (index,cateId) {
+                    fetch_book(books,cateId,1);
+                });
+            }
+        }
         var fetch_book = function (books,cateId,pageNum) {
             $("#zhuanzhuan_msg").html('<div>cateId:'+cateId+',pageNum'+pageNum+'</div>')
-
+            var key = "book_isbn13_collected";
+            var books_isbn = JSON.parse(localStorage.getItem(key))||{};
             $.ajax({
                 url:'https://app.zhuanzhuan.com/zzopen/sellbook/free_book_list?cateId='+cateId+'&pageNum='+pageNum+'&pageSize=50',
                 type: "GET",
@@ -88,6 +106,9 @@
                             if(!books_passed[book.isbn13]&&!books_exist[book.isbn13]){
                                 books.push(book);
                                 books_exist[book.isbn13]=1;
+                                if(!books_isbn[book.isbn13]){
+                                    $(".my_audio").trigger('play');
+                                }
                                 if(books.length<500){
                                     render_books(books);
                                 }
@@ -99,6 +120,8 @@
                     }else{
                         if(cateId==cateIds[cateIds.length-1]){
                             render_books(books);
+                            check_next_fetch(books);
+
                         }
                     }
                 }
