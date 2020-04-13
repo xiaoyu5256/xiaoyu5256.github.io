@@ -57,6 +57,8 @@ date: 2016-02-17 08:16:00
 [RabbitMQ 使用参考](https://www.zouyesheng.com/rabbitmq.html)
 
 ## 编程语言
+### Rust
+[rustwiki](https://rustwiki.org/zh-CN/rust-docs.html)
 ### Java
 [Java资源大全中文版](https://github.com/jobbole/awesome-java-cn)
 [java8-tutorial](https://github.com/winterbe/java8-tutorial)
