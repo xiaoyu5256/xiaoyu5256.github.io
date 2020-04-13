@@ -59,6 +59,7 @@ date: 2016-02-17 08:16:00
 ## 编程语言
 ### Rust
 [rustwiki](https://rustwiki.org/zh-CN/rust-docs.html)
+[rustprimer](https://rustcc.gitbooks.io/rustprimer)
 ### Java
 [Java资源大全中文版](https://github.com/jobbole/awesome-java-cn)
 [java8-tutorial](https://github.com/winterbe/java8-tutorial)
