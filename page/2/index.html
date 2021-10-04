@@ -43,7 +43,7 @@
 		</hgroup>
 -->
         <hgroup>
-            <h2 class="header-title">undefined</h2>
+            <h2 class="header-title">Show Me Code</h2>
         </hgroup>
         
 
@@ -254,92 +254,6 @@
 
 
   
-    <article id="post-CentOS6安装ceph笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/20/CentOS6%E5%AE%89%E8%A3%85ceph%E7%AC%94%E8%AE%B0/" class="article-date">
-  	<time datetime="2016-08-20T04:46:43.000Z" itemprop="datePublished">2016-08-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/20/CentOS6%E5%AE%89%E8%A3%85ceph%E7%AC%94%E8%AE%B0/">CentOS6安装ceph笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h2><ul>
-<li>准备三台机器，分别修改hostname,<code>vim /etc/sysconfig/network</code>,分别修改成<code>ceph-node1</code>,<code>ceph-node2</code>,<code>ceph-node3</code><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">HOSTNAME</span>=ceph-node1</span><br></pre></td></tr></table></figure></li>
-<li><p>在ceph-node1上设置免密码ssh登录</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br><span class="line">ssh-<span class="keyword">copy</span>-<span class="built_in">id</span> ceph-node2</span><br><span class="line">ssh-<span class="keyword">copy</span>-<span class="built_in">id</span> ceph-node3</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在ceph-node1的机器上修改hosts,<code>vim /etc/hosts</code></p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">192.168.57.101</span> ceph-node1</span><br><span class="line"><span class="number">192.168.57.102</span> ceph-node2</span><br><span class="line"><span class="number">192.168.57.103</span> ceph-node3</span><br></pre></td></tr></table></figure></li>
-<li><p>将hosts复制到cehp-node2,ceph-node3上</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp <span class="regexp">/etc/</span>hosts root@cehp-node2:<span class="regexp">/ect/</span>hosts</span><br><span class="line">scp <span class="regexp">/etc/</span>hosts root@cehp-node3:<span class="regexp">/ect/</span>hosts</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>三台机器分别使用国内的163的yum镜像</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mv <span class="regexp">/etc/yum</span>.repos.d<span class="regexp">/CentOS-Base.repo /</span>etc<span class="regexp">/yum.repos.d/</span>CentOS-Base.repo.backup</span><br><span class="line">cd <span class="regexp">/etc/yum</span>.repos.d/</span><br><span class="line">wget http:<span class="regexp">//mi</span>rrors.<span class="number">163</span>.com<span class="regexp">/.help/</span>CentOS6-Base-<span class="number">163</span>.repo</span><br><span class="line">mv CentOS6-Base-<span class="number">163</span>.repo CentOS-Base.repo</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>三台机器分别升级系统</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">yum update</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>三台机器同步时间</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ntpdate</span> pool.ntp.org</span><br><span class="line">service ntpd restart</span><br><span class="line">chkconfig ntpd <span class="literal">on</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加ceph的yum源，<code>vim /etc/yum.repos.d/ceph.repo</code>,内容如下：</p>
-</li>
-<li><p>使用国内ceph镜像,ceph最版本不提供centos6的包，只能安装hammer之前的版本。</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export CEPH_DEPLOY_REPO_URL=http:<span class="regexp">//mi</span>rrors.<span class="number">163</span>.com<span class="regexp">/ceph/</span>rpm-hammer/el6</span><br><span class="line">export CEPH_DEPLOY_GPG_URL=http:<span class="regexp">//mi</span>rrors.<span class="number">163</span>.com<span class="regexp">/ceph/</span>keys/release.asc</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ceph/" rel="tag">ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/%E8%BF%90%E7%BB%B4/">运维</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/08/20/CentOS6%E5%AE%89%E8%A3%85ceph%E7%AC%94%E8%AE%B0/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-CentOS7安装Oracle11g" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -424,6 +338,92 @@
 	</div>
 
 
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-CentOS6安装ceph笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/20/CentOS6%E5%AE%89%E8%A3%85ceph%E7%AC%94%E8%AE%B0/" class="article-date">
+  	<time datetime="2016-08-20T04:46:43.000Z" itemprop="datePublished">2016-08-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/20/CentOS6%E5%AE%89%E8%A3%85ceph%E7%AC%94%E8%AE%B0/">CentOS6安装ceph笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h2><ul>
+<li>准备三台机器，分别修改hostname,<code>vim /etc/sysconfig/network</code>,分别修改成<code>ceph-node1</code>,<code>ceph-node2</code>,<code>ceph-node3</code><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">HOSTNAME</span>=ceph-node1</span><br></pre></td></tr></table></figure></li>
+<li><p>在ceph-node1上设置免密码ssh登录</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br><span class="line">ssh-<span class="keyword">copy</span>-<span class="built_in">id</span> ceph-node2</span><br><span class="line">ssh-<span class="keyword">copy</span>-<span class="built_in">id</span> ceph-node3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在ceph-node1的机器上修改hosts,<code>vim /etc/hosts</code></p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">192.168.57.101</span> ceph-node1</span><br><span class="line"><span class="number">192.168.57.102</span> ceph-node2</span><br><span class="line"><span class="number">192.168.57.103</span> ceph-node3</span><br></pre></td></tr></table></figure></li>
+<li><p>将hosts复制到cehp-node2,ceph-node3上</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp <span class="regexp">/etc/</span>hosts root@cehp-node2:<span class="regexp">/ect/</span>hosts</span><br><span class="line">scp <span class="regexp">/etc/</span>hosts root@cehp-node3:<span class="regexp">/ect/</span>hosts</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>三台机器分别使用国内的163的yum镜像</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mv <span class="regexp">/etc/yum</span>.repos.d<span class="regexp">/CentOS-Base.repo /</span>etc<span class="regexp">/yum.repos.d/</span>CentOS-Base.repo.backup</span><br><span class="line">cd <span class="regexp">/etc/yum</span>.repos.d/</span><br><span class="line">wget http:<span class="regexp">//mi</span>rrors.<span class="number">163</span>.com<span class="regexp">/.help/</span>CentOS6-Base-<span class="number">163</span>.repo</span><br><span class="line">mv CentOS6-Base-<span class="number">163</span>.repo CentOS-Base.repo</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>三台机器分别升级系统</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">yum update</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>三台机器同步时间</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ntpdate</span> pool.ntp.org</span><br><span class="line">service ntpd restart</span><br><span class="line">chkconfig ntpd <span class="literal">on</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加ceph的yum源，<code>vim /etc/yum.repos.d/ceph.repo</code>,内容如下：</p>
+</li>
+<li><p>使用国内ceph镜像,ceph最版本不提供centos6的包，只能安装hammer之前的版本。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export CEPH_DEPLOY_REPO_URL=http:<span class="regexp">//mi</span>rrors.<span class="number">163</span>.com<span class="regexp">/ceph/</span>rpm-hammer/el6</span><br><span class="line">export CEPH_DEPLOY_GPG_URL=http:<span class="regexp">//mi</span>rrors.<span class="number">163</span>.com<span class="regexp">/ceph/</span>keys/release.asc</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/" rel="tag">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ceph/" rel="tag">ceph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/%E8%BF%90%E7%BB%B4/">运维</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/20/CentOS6%E5%AE%89%E8%A3%85ceph%E7%AC%94%E8%AE%B0/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
