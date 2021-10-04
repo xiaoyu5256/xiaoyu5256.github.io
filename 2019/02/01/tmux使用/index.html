@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>tmux使用 | Show me code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="系统操作12345? 列出所有快捷键；按q返回r 强制重绘未脱离的会话: 进入命令行模式；此时可以输入支持的命令，例如kill-server可以关闭服务器[ 进入复制模式；此时的操作与vi&#x2F;emacs相同，按q&#x2F;Esc退出~ 列出提示信息缓存；其中包含了之前tmux返回的各种提示信息 会话123456789tmux new -s basic  新建会话,basic为会话名称exit   退出会话t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tmux使用">
+<meta property="og:url" content="http://showmecode.cn/2019/02/01/tmux%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="Show me code">
+<meta property="og:description" content="系统操作12345? 列出所有快捷键；按q返回r 强制重绘未脱离的会话: 进入命令行模式；此时可以输入支持的命令，例如kill-server可以关闭服务器[ 进入复制模式；此时的操作与vi&#x2F;emacs相同，按q&#x2F;Esc退出~ 列出提示信息缓存；其中包含了之前tmux返回的各种提示信息 会话123456789tmux new -s basic  新建会话,basic为会话名称exit   退出会话t">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-02-01T10:00:40.000Z">
+<meta property="article:modified_time" content="2020-08-19T12:08:01.303Z">
+<meta property="article:author" content="晓宇">
+<meta property="article:tag" content="开发工具">
+<meta property="article:tag" content="命令行">
+<meta property="article:tag" content="tmux">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Show me code" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+<!--
+		<hgroup>
+		  <h1 class="header-author"><a href="/">undefined</a></h1>
+		</hgroup>
+-->
+        <hgroup>
+            <h2 class="header-title">undefined</h2>
+        </hgroup>
+        
+
+
+
+<!--
+		
+--> 
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/categories/%E5%90%8E%E7%AB%AF">后端</a></li>
+				        
+							<li><a href="/categories/%E5%89%8D%E7%AB%AF">前端</a></li>
+				        
+							<li><a href="/categories/%E5%B7%A5%E5%85%B7">工具</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+							<li><a href="/links">资源</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xiaoyu5256" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/xiaoyu5256" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="douban" target="_blank" href="http://douban.com/people/xiaoyu5256" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Haskell/" style="font-size: 10px;">Haskell</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/VMWare/" style="font-size: 14px;">VMWare</a> <a href="/tags/Xshell/" style="font-size: 10px;">Xshell</a> <a href="/tags/brew/" style="font-size: 10px;">brew</a> <a href="/tags/centos/" style="font-size: 14px;">centos</a> <a href="/tags/ceph/" style="font-size: 10px;">ceph</a> <a href="/tags/compass/" style="font-size: 10px;">compass</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/oracle/" style="font-size: 12px;">oracle</a> <a href="/tags/owncloud/" style="font-size: 10px;">owncloud</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/postgresql/" style="font-size: 10px;">postgresql</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tmux/" style="font-size: 10px;">tmux</a> <a href="/tags/vim/" style="font-size: 12px;">vim</a> <a href="/tags/visual-studio/" style="font-size: 10px;">visual studio</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14px;">前端</a> <a href="/tags/%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/" style="font-size: 10px;">加密解密</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 10px;">后端</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 12px;">命令行</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 12px;">存储</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 20px;">开发工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 12px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16px;">数据库</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 10px;">树莓派</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 12px;">版本管理</a> <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91/" style="font-size: 10px;">私有云</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10px;">缓存</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 16px;">编辑器</a> <a href="/tags/%E7%BD%91%E7%9B%98/" style="font-size: 10px;">网盘</a> <a href="/tags/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">网页设计</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 10px;">翻译</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 12px;">读书笔记</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 18px;">运维</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">undefined</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">undefined</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/categories/%E5%90%8E%E7%AB%AF">后端</a></li>
+		        
+					<li><a href="/categories/%E5%89%8D%E7%AB%AF">前端</a></li>
+		        
+					<li><a href="/categories/%E5%B7%A5%E5%85%B7">工具</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+					<li><a href="/links">资源</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xiaoyu5256" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/xiaoyu5256" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="douban" target="_blank" href="http://douban.com/people/xiaoyu5256" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-tmux使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/02/01/tmux%E4%BD%BF%E7%94%A8/" class="article-date">
+  	<time datetime="2019-02-01T10:00:40.000Z" itemprop="datePublished">2019-02-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      tmux使用
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tmux/" rel="tag">tmux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" rel="tag">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" rel="tag">开发工具</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/tmux/">tmux</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="系统操作"><a href="#系统操作" class="headerlink" title="系统操作"></a>系统操作</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">? 列出所有快捷键；按q返回</span><br><span class="line">r 强制重绘未脱离的会话</span><br><span class="line">: 进入命令行模式；此时可以输入支持的命令，例如kill-server可以关闭服务器</span><br><span class="line">[ 进入复制模式；此时的操作与vi<span class="regexp">/emacs相同，按q/</span>Esc退出</span><br><span class="line">~ 列出提示信息缓存；其中包含了之前tmux返回的各种提示信息</span><br></pre></td></tr></table></figure>
+<h3 id="会话"><a href="#会话" class="headerlink" title="会话"></a>会话</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tmux new -s basic  新建会话,basic为会话名称</span><br><span class="line"><span class="keyword">exit</span>   退出会话</span><br><span class="line">tmux ls 列出会话</span><br><span class="line">tmux attach -t sessionid  进入会话</span><br><span class="line">tmux kill-session -t sessionid</span><br><span class="line">d 脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话</span><br><span class="line">D 选择要脱离的会话；在同时开启了多个会话时使用</span><br><span class="line">Ctrl+z 挂起当前会话</span><br><span class="line">s 选择并切换会话；在同时开启了多个会话时使用</span><br></pre></td></tr></table></figure>
+<h3 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h3><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tmux <span class="keyword">new</span> -s basic -n <span class="built_in">shell</span> 新建session名字为basic，窗口名字为<span class="built_in">shell</span></span><br><span class="line">c 创建新窗口</span><br><span class="line">&amp; 关闭当前窗口</span><br><span class="line">数字键 切换至指定窗口</span><br><span class="line">p 切换至上一窗口</span><br><span class="line">n 切换至下一窗口</span><br><span class="line">l 在前后两个窗口间互相切换</span><br><span class="line">w 通过窗口列表切换窗口</span><br><span class="line">, 重命名当前窗口；这样便于识别</span><br><span class="line">. 修改当前窗口编号；相当于窗口重新排序</span><br><span class="line">f 在所有窗口中查找指定文本</span><br></pre></td></tr></table></figure>
+<h3 id="面板"><a href="#面板" class="headerlink" title="面板"></a>面板</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&quot; 将当前面板平分为上下两块</span><br><span class="line">% 将当前面板平分为左右两块</span><br><span class="line">x 关闭当前面板</span><br><span class="line">! 将当前面板置于新窗口；即新建一个窗口，其中仅包含当前面板</span><br><span class="line">Ctrl+方向键 以<span class="number">1</span>个单元格为单位移动边缘以调整当前面板大小</span><br><span class="line">Alt+方向键 以<span class="number">5</span>个单元格为单位移动边缘以调整当前面板大小</span><br><span class="line">Space 在预置的面板布局中循环切换；依次包括even-horizontal、even-vertical、<span class="selector-tag">main</span>-horizontal、<span class="selector-tag">main</span>-vertical、tiled</span><br><span class="line"><span class="selector-tag">q</span> 显示面板编号</span><br><span class="line">o 在当前窗口中选择下一面板</span><br><span class="line">方向键 移动光标以选择面板</span><br><span class="line">&#123; 向前置换当前面板</span><br><span class="line">&#125; 向后置换当前面板</span><br><span class="line">Alt+o 逆时针旋转当前窗口的面板</span><br><span class="line">Ctrl+o 顺时针旋转当前窗口的面板</span><br><span class="line">Alt+方向键 调整面板大小</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/10/04/Mac%E4%B8%8Bbrew%E5%88%87%E6%8D%A2%E4%B8%BA%E5%9B%BD%E5%86%85%E6%BA%90/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Mac 下 brew 切换为国内源
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">正则表达式总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="tmux使用" data-title="tmux使用" data-url="http://showmecode.cn/2019/02/01/tmux%E4%BD%BF%E7%94%A8/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"showmecode"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2021 晓宇
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?d19398d6ff57c46d4b3620064d731f80";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

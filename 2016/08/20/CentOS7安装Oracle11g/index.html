@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>CentOS7安装Oracle11g笔记 | Show me code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="下载安装包下载,解压 添加host192.168.192.130  vm_c7 关闭selinux,防火墙 安装依赖包  1yum install gcc make binutils gcc-c++ compat-libstdc++-33elfutils-libelf-devel elfutils-libelf-devel-static ksh libaio libaio-develnumact">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS7安装Oracle11g笔记">
+<meta property="og:url" content="http://showmecode.cn/2016/08/20/CentOS7%E5%AE%89%E8%A3%85Oracle11g/index.html">
+<meta property="og:site_name" content="Show me code">
+<meta property="og:description" content="下载安装包下载,解压 添加host192.168.192.130  vm_c7 关闭selinux,防火墙 安装依赖包  1yum install gcc make binutils gcc-c++ compat-libstdc++-33elfutils-libelf-devel elfutils-libelf-devel-static ksh libaio libaio-develnumact">
+<meta property="og:locale">
+<meta property="article:published_time" content="2016-08-20T04:46:43.000Z">
+<meta property="article:modified_time" content="2020-08-19T12:08:01.299Z">
+<meta property="article:author" content="晓宇">
+<meta property="article:tag" content="oracle">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Show me code" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+<!--
+		<hgroup>
+		  <h1 class="header-author"><a href="/">undefined</a></h1>
+		</hgroup>
+-->
+        <hgroup>
+            <h2 class="header-title">undefined</h2>
+        </hgroup>
+        
+
+
+
+<!--
+		
+--> 
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/categories/%E5%90%8E%E7%AB%AF">后端</a></li>
+				        
+							<li><a href="/categories/%E5%89%8D%E7%AB%AF">前端</a></li>
+				        
+							<li><a href="/categories/%E5%B7%A5%E5%85%B7">工具</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+							<li><a href="/links">资源</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xiaoyu5256" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/xiaoyu5256" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="douban" target="_blank" href="http://douban.com/people/xiaoyu5256" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Haskell/" style="font-size: 10px;">Haskell</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/VMWare/" style="font-size: 14px;">VMWare</a> <a href="/tags/Xshell/" style="font-size: 10px;">Xshell</a> <a href="/tags/brew/" style="font-size: 10px;">brew</a> <a href="/tags/centos/" style="font-size: 14px;">centos</a> <a href="/tags/ceph/" style="font-size: 10px;">ceph</a> <a href="/tags/compass/" style="font-size: 10px;">compass</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/oracle/" style="font-size: 12px;">oracle</a> <a href="/tags/owncloud/" style="font-size: 10px;">owncloud</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/postgresql/" style="font-size: 10px;">postgresql</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tmux/" style="font-size: 10px;">tmux</a> <a href="/tags/vim/" style="font-size: 12px;">vim</a> <a href="/tags/visual-studio/" style="font-size: 10px;">visual studio</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14px;">前端</a> <a href="/tags/%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/" style="font-size: 10px;">加密解密</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 10px;">后端</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 12px;">命令行</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 12px;">存储</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 20px;">开发工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 12px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16px;">数据库</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 10px;">树莓派</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 12px;">版本管理</a> <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91/" style="font-size: 10px;">私有云</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10px;">缓存</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 16px;">编辑器</a> <a href="/tags/%E7%BD%91%E7%9B%98/" style="font-size: 10px;">网盘</a> <a href="/tags/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">网页设计</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 10px;">翻译</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 12px;">读书笔记</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 18px;">运维</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">undefined</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">undefined</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/categories/%E5%90%8E%E7%AB%AF">后端</a></li>
+		        
+					<li><a href="/categories/%E5%89%8D%E7%AB%AF">前端</a></li>
+		        
+					<li><a href="/categories/%E5%B7%A5%E5%85%B7">工具</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+					<li><a href="/links">资源</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xiaoyu5256" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/xiaoyu5256" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="douban" target="_blank" href="http://douban.com/people/xiaoyu5256" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-CentOS7安装Oracle11g" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/20/CentOS7%E5%AE%89%E8%A3%85Oracle11g/" class="article-date">
+  	<time datetime="2016-08-20T04:46:43.000Z" itemprop="datePublished">2016-08-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CentOS7安装Oracle11g笔记
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/" rel="tag">oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/%E8%BF%90%E7%BB%B4/">运维</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>下载安装包<a target="_blank" rel="noopener" href="https://www.oracle.com/technetwork/database/enterprise-edition/downloads/112010-linx8664soft-100572.html">下载</a>,解压</li>
+<li>添加host<code>192.168.192.130  vm_c7</code></li>
+<li>关闭selinux,防火墙</li>
+<li>安装依赖包  <figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">yum</span> <span class="comment">install</span> <span class="comment">gcc</span> <span class="comment">make</span> <span class="comment">binutils</span> <span class="comment">gcc</span><span class="literal">-</span><span class="comment">c</span>++ <span class="comment">compat</span><span class="literal">-</span><span class="comment">libstdc</span>++<span class="literal">-</span><span class="comment">33elfutils</span><span class="literal">-</span><span class="comment">libelf</span><span class="literal">-</span><span class="comment">devel</span> <span class="comment">elfutils</span><span class="literal">-</span><span class="comment">libelf</span><span class="literal">-</span><span class="comment">devel</span><span class="literal">-</span><span class="comment">static</span> <span class="comment">ksh</span> <span class="comment">libaio</span> <span class="comment">libaio</span><span class="literal">-</span><span class="comment">develnumactl</span><span class="literal">-</span><span class="comment">devel</span> <span class="comment">sysstat</span> <span class="comment">unixODBC</span> <span class="comment">unixODBC</span><span class="literal">-</span><span class="comment">devel</span> <span class="comment">pcre</span><span class="literal">-</span><span class="comment">devel</span> <span class="comment">–y</span></span><br></pre></td></tr></table></figure></li>
+<li>添加安装用户和组  <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">groupadd oinstall</span><br><span class="line">groupadd dba</span><br><span class="line">useradd -g oinstall -G dba <span class="keyword">oracle</span></span><br><span class="line"><span class="keyword"></span>passwd <span class="keyword">oracle</span></span><br><span class="line"><span class="keyword"></span>id <span class="keyword">oracle</span></span><br></pre></td></tr></table></figure></li>
+<li>修改内核参数配置文件,<code>vim /etc/sysctl.conf</code>,添加内容,执行<code>sysctl -p</code>,其中<code>kernel.shmmax = 1073741824</code>为物理内存的一半  <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">fs.aio-max-nr</span> = <span class="number">1048576</span></span><br><span class="line"><span class="attr">fs.file-max</span> = <span class="number">6815744</span></span><br><span class="line"><span class="attr">kernel.shmall</span> = <span class="number">2097152</span></span><br><span class="line"><span class="attr">kernel.shmmax</span> = <span class="number">1073741824</span></span><br><span class="line"><span class="attr">kernel.shmmni</span> = <span class="number">4096</span></span><br><span class="line"><span class="attr">kernel.sem</span> = <span class="number">250</span> <span class="number">32000</span> <span class="number">100</span> <span class="number">128</span></span><br><span class="line"><span class="attr">net.ipv4.ip_local_port_range</span> = <span class="number">9000</span> <span class="number">65500</span></span><br><span class="line"><span class="attr">net.core.rmem_default</span> = <span class="number">262144</span></span><br><span class="line"><span class="attr">net.core.rmem_max</span> = <span class="number">4194304</span></span><br><span class="line"><span class="attr">net.core.wmem_default</span> = <span class="number">262144</span></span><br><span class="line"><span class="attr">net.core.wmem_max</span> = <span class="number">1048576</span></span><br></pre></td></tr></table></figure></li>
+<li>修改用户限制文件<code>vim /etc/security/limits.conf</code>,添加内容：  <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">oracle</span>           soft    nproc           <span class="number">2047</span></span><br><span class="line"><span class="attribute">oracle</span>           hard    nproc           <span class="number">16384</span></span><br><span class="line"><span class="attribute">oracle</span>           soft    nofile          <span class="number">1024</span></span><br><span class="line"><span class="attribute">oracle</span>           hard    nofile         <span class="number">65536</span></span><br><span class="line"><span class="attribute">oracle</span>           soft    stack           <span class="number">10240</span></span><br></pre></td></tr></table></figure></li>
+<li>修改/etc/pam.d/login文件，添加内容：  <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">session</span> required  /lib64/<span class="keyword">security</span>/pam_limits.so</span><br><span class="line"><span class="keyword">session</span> required   pam_limits.so</span><br></pre></td></tr></table></figure></li>
+<li>修改/etc/profile文件,添加内容：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ <span class="variable">$USER</span> = <span class="string">&quot;oracle&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$SHELL</span> = <span class="string">&quot;/bin/ksh&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line"><span class="built_in">ulimit</span> -p 16384</span><br><span class="line"><span class="built_in">ulimit</span> -n 65536</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">ulimit</span> -u 16384 -n 65536</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></li>
+<li>创建安装目录  <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/data/</span>oracle<span class="regexp">/product/</span><span class="number">11.2</span>.<span class="number">0</span></span><br><span class="line">mkdir <span class="regexp">/data/</span>oracle/oradata</span><br><span class="line">mkdir <span class="regexp">/data/</span>oracle/inventory</span><br><span class="line">mkdir <span class="regexp">/data/</span>oracle/fast_recovery_area</span><br><span class="line">chown -R oracle:oinstall <span class="regexp">/data/</span>oracle</span><br><span class="line">chmod -R <span class="number">775</span> <span class="regexp">/data/</span>oracle</span><br></pre></td></tr></table></figure></li>
+<li>设置oracle用户的环境变量  <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su - oracle</span><br><span class="line">vim <span class="string">.bash_profile</span></span><br></pre></td></tr></table></figure>
+  添加内容:  <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ORACLE_BASE</span>=/data/oracle</span><br><span class="line"><span class="attribute">ORACLE_HOME</span>=<span class="variable">$ORACLE_BASE</span>/product/11.2.0</span><br><span class="line"><span class="attribute">ORACLE_SID</span>=ora11</span><br><span class="line"><span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$ORACLE_HOME/bin</span><br><span class="line"><span class="builtin-name">export</span> ORACLE_BASE ORACLE_HOME ORACLE_SID PATH</span><br></pre></td></tr></table></figure></li>
+<li>编辑静默安装响应文件  <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp -R <span class="regexp">/data/</span>oracle<span class="regexp">/oraclesetup/</span>database<span class="regexp">/response/</span> .</span><br><span class="line">cd response/</span><br><span class="line">vim db_install.rsp</span><br></pre></td></tr></table></figure>
+  设置内容如下：  <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">oracle.install.option</span>=INSTALL_DB_SWONLY</span><br><span class="line"><span class="attr">ORACLE_HOSTNAME</span>=CentOS</span><br><span class="line"><span class="attr">UNIX_GROUP_NAME</span>=oinstall</span><br><span class="line"><span class="attr">INVENTORY_LOCATION</span>=/data/oracle/inventory</span><br><span class="line"><span class="attr">SELECTED_LANGUAGES</span>=en,zh_CN</span><br><span class="line"><span class="attr">ORACLE_HOME</span>=/data/oracle/product/<span class="number">11.2</span>.<span class="number">0</span></span><br><span class="line"><span class="attr">ORACLE_BASE</span>=/data/oracle</span><br><span class="line"><span class="attr">oracle.install.db.InstallEdition</span>=EE</span><br><span class="line"><span class="attr">oracle.install.db.DBA_GROUP</span>=dba</span><br><span class="line"><span class="attr">oracle.install.db.OPER_GROUP</span>=dba</span><br><span class="line"><span class="attr">DECLINE_SECURITY_UPDATES</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+<li>根据响应文件静默安装Oracle11g  <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd <span class="regexp">/data/</span>oracle<span class="regexp">/oraclesetup/</span>database/</span><br><span class="line">.<span class="regexp">/runInstaller -silent -responseFile /</span>home<span class="regexp">/oracle/</span>response/db_install.rsp -ignorePrereq</span><br></pre></td></tr></table></figure></li>
+<li>安装成功后，按照脚本要求，打开终端，执行脚本  <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sh <span class="regexp">/data/</span>oracle<span class="regexp">/inventory/</span>db_1/orainstRoot.sh</span><br><span class="line">sh <span class="regexp">/data/</span>oracle<span class="regexp">/product/</span><span class="number">11.2</span>.<span class="number">0</span><span class="regexp">/db_1/</span></span><br></pre></td></tr></table></figure></li>
+<li>以静默方式配置监听  <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netca <span class="regexp">/silent /</span>responseFile <span class="regexp">/home/</span>oracle<span class="regexp">/response/</span>netca.rsp</span><br></pre></td></tr></table></figure></li>
+<li>检查端口是否开启  <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tnulp <span class="string">| grep 1521</span></span><br></pre></td></tr></table></figure></li>
+<li><p>以静默方式建立新库，同时也建立一个对应的实例,<code>vim /home/oracle/response/dbca.rsp</code><br>修改配置：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">GDBNAME</span>= <span class="string">&quot;ora11&quot;</span></span><br><span class="line"><span class="attr">SID</span> =<span class="string">&quot; ora11&quot;</span></span><br><span class="line"><span class="attr">SYSPASSWORD</span>= <span class="string">&quot; system@2016&quot;</span></span><br><span class="line"><span class="attr">SYSTEMPASSWORD</span>= <span class="string">&quot;system@2016&quot;</span></span><br><span class="line"><span class="attr">SYSMANPASSWORD</span>= <span class="string">&quot; system@2016&quot;</span></span><br><span class="line"><span class="attr">DBSNMPPASSWORD</span>= <span class="string">&quot; system@2016&quot;</span></span><br><span class="line"><span class="attr">DATAFILEDESTINATION</span>=/data/oracle/oradata</span><br><span class="line"><span class="attr">RECOVERYAREADESTINATION</span>=/data/oracle/fast_recovery_area</span><br><span class="line"><span class="attr">CHARACTERSET</span>= <span class="string">&quot;ZHS16GBK&quot;</span></span><br><span class="line"><span class="attr">TOTALMEMORY</span>= <span class="string">&quot;1638&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行配置 <code>dbca -silent -responseFile /home/oracle/response/dbca.rsp</code></p>
+</li>
+<li>检查实例进程 <code>ps -ef | grep ora_</code></li>
+<li>查看监听状态 <code>lsnrctl status</code></li>
+<li>若找不到监听，修改<code>/data/oracle/product/11.2.0/network/admin/listener.ora</code>,添加  <figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="attr">SID_LIST_LISTENER</span> =</span><br><span class="line">(<span class="attr">SID_LIST</span> =</span><br><span class="line">  (<span class="attr">SID_DESC</span> =</span><br><span class="line">    (<span class="attr">GLOBAL_DBNAME</span> = ora11)</span><br><span class="line">    (<span class="attr">SID_NAME</span> = ora11)</span><br><span class="line">  )</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+<li>登录后查看实例 <code>sqlplus / as sysdba</code>,执行sql<code>SQL&gt; select status from v$instance;</code></li>
+<li>修改 <code>/data/oracle/product/11.2.0/bin/dbstart</code>,将<code>ORACLE_HOME_LISTNER=$1</code>修改为O<code>RACLE_HOME_LISTNER=$ORACLE_HOME</code></li>
+<li>修改 <code>/data/oracle/product/11.2.0/bin/dbshut</code>,将<code>ORACLE_HOME_LISTNER=$1</code>修改为O<code>RACLE_HOME_LISTNER=$ORACLE_HOME</code></li>
+<li>修改<code>/etc/oratab</code>文件,将<code>orcl:/data/oracle/product/11.2.0:N</code>中最后的N改为Y，成为<code>orcl:/data/oracle/product/11.2.0:Y</code></li>
+<li>切换root用户，设置开机启动</li>
+<li><p>设置开机启动</p>
+  <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su -</span><br><span class="line">vim <span class="regexp">/etc/</span>rc.d<span class="regexp">/init.d/</span>oracle</span><br></pre></td></tr></table></figure>
+<p>  添加内容:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">#oracle: Start/Stop Oracle Database 11g R2</span></span><br><span class="line"><span class="comment">#chkconfig: 345 90 10</span></span><br><span class="line"><span class="comment">#description: The Oracle Database is an Object-Relational Database ManagementSystem.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">. /etc/rc.d/init.d/<span class="built_in">functions</span></span><br><span class="line">LOCKFILE=/var/lock/subsys/oracle</span><br><span class="line">ORACLE_HOME=/data/oracle/product/11.2.0</span><br><span class="line">ORACLE_USER=oracle</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">&quot;<span class="variable">$1</span>&quot;</span> <span class="keyword">in</span></span><br><span class="line"><span class="string">&#x27;start&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> [ -f <span class="variable">$LOCKFILE</span> ];<span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$0</span> already running.</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> -n $<span class="string">&quot;StartingOracle Database:&quot;</span></span><br><span class="line">su - <span class="variable">$ORACLE_USER</span> -c<span class="string">&quot;<span class="variable">$ORACLE_HOME</span>/bin/lsnrctl start&quot;</span></span><br><span class="line">su - <span class="variable">$ORACLE_USER</span> -c<span class="string">&quot;<span class="variable">$ORACLE_HOME</span>/bin/dbstart <span class="variable">$ORACLE_HOME</span>&quot;</span></span><br><span class="line">su - <span class="variable">$ORACLE_USER</span> -c<span class="string">&quot;<span class="variable">$ORACLE_HOME</span>/bin/emctl start dbconsole&quot;</span></span><br><span class="line">touch <span class="variable">$LOCKFILE</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">;;</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;stop&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> [ ! -f <span class="variable">$LOCKFILE</span> ]; <span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$0</span> already stopping.</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> -n $<span class="string">&quot;StoppingOracle Database:&quot;</span></span><br><span class="line">su - <span class="variable">$ORACLE_USER</span> -c<span class="string">&quot;<span class="variable">$ORACLE_HOME</span>/bin/lsnrctl stop&quot;</span></span><br><span class="line">su - <span class="variable">$ORACLE_USER</span> -c<span class="string">&quot;<span class="variable">$ORACLE_HOME</span>/bin/dbshut&quot;</span></span><br><span class="line">su - <span class="variable">$ORACLE_USER</span> -c<span class="string">&quot;<span class="variable">$ORACLE_HOME</span>/bin/emctl stop dbconsole&quot;</span></span><br><span class="line">rm -f <span class="variable">$LOCKFILE</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">;;</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;restart&#x27;</span>)</span><br><span class="line"><span class="variable">$0</span> stop</span><br><span class="line">sleep 5</span><br><span class="line"><span class="variable">$0</span> start</span><br><span class="line">;;</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;status&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> [ -f <span class="variable">$LOCKFILE</span> ]; <span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$1</span> started.</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$0</span> stopped.</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Usage: <span class="variable">$0</span>[start|stop|status]&quot;</span></span><br><span class="line"><span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
+<p>  修改权限<code>chmod 755 /etc/init.d/oracle</code></p>
+</li>
+<li><p>设置开机启动<code>chkconfig oracle on</code></p>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/20/CentOS6%E5%AE%89%E8%A3%85ceph%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          CentOS6安装ceph笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/09/node-js%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node.js总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="CentOS7安装Oracle11g" data-title="CentOS7安装Oracle11g笔记" data-url="http://showmecode.cn/2016/08/20/CentOS7%E5%AE%89%E8%A3%85Oracle11g/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"showmecode"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2021 晓宇
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?d19398d6ff57c46d4b3620064d731f80";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

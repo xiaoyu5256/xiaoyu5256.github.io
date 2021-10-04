@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>owncloud私有云盘安装笔记 | Show me code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="安装笔记服务器环境centos6.8,其他的操作系统会不同，请看官方文档。  php的版本必须5.4或5.4以上，安装php,mysql,apache我用操作系统自带的，操作系统若有之前版本php需卸载。 1234567891011yum install centos-release-SCLyum install php54 php54-php php54-php-gd php54-php-mbs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="owncloud私有云盘安装笔记">
+<meta property="og:url" content="http://showmecode.cn/2016/08/06/owncloud%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Show me code">
+<meta property="og:description" content="安装笔记服务器环境centos6.8,其他的操作系统会不同，请看官方文档。  php的版本必须5.4或5.4以上，安装php,mysql,apache我用操作系统自带的，操作系统若有之前版本php需卸载。 1234567891011yum install centos-release-SCLyum install php54 php54-php php54-php-gd php54-php-mbs">
+<meta property="og:locale">
+<meta property="article:published_time" content="2016-08-06T07:32:06.000Z">
+<meta property="article:modified_time" content="2020-08-19T12:08:01.302Z">
+<meta property="article:author" content="晓宇">
+<meta property="article:tag" content="owncloud">
+<meta property="article:tag" content="私有云">
+<meta property="article:tag" content="网盘">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Show me code" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+<!--
+		<hgroup>
+		  <h1 class="header-author"><a href="/">undefined</a></h1>
+		</hgroup>
+-->
+        <hgroup>
+            <h2 class="header-title">undefined</h2>
+        </hgroup>
+        
+
+
+
+<!--
+		
+--> 
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/categories/%E5%90%8E%E7%AB%AF">后端</a></li>
+				        
+							<li><a href="/categories/%E5%89%8D%E7%AB%AF">前端</a></li>
+				        
+							<li><a href="/categories/%E5%B7%A5%E5%85%B7">工具</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+							<li><a href="/links">资源</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xiaoyu5256" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/xiaoyu5256" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="douban" target="_blank" href="http://douban.com/people/xiaoyu5256" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Haskell/" style="font-size: 10px;">Haskell</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/VMWare/" style="font-size: 14px;">VMWare</a> <a href="/tags/Xshell/" style="font-size: 10px;">Xshell</a> <a href="/tags/brew/" style="font-size: 10px;">brew</a> <a href="/tags/centos/" style="font-size: 14px;">centos</a> <a href="/tags/ceph/" style="font-size: 10px;">ceph</a> <a href="/tags/compass/" style="font-size: 10px;">compass</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/oracle/" style="font-size: 12px;">oracle</a> <a href="/tags/owncloud/" style="font-size: 10px;">owncloud</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/postgresql/" style="font-size: 10px;">postgresql</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tmux/" style="font-size: 10px;">tmux</a> <a href="/tags/vim/" style="font-size: 12px;">vim</a> <a href="/tags/visual-studio/" style="font-size: 10px;">visual studio</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14px;">前端</a> <a href="/tags/%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/" style="font-size: 10px;">加密解密</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 10px;">后端</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 12px;">命令行</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 12px;">存储</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 20px;">开发工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 12px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16px;">数据库</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 10px;">树莓派</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 12px;">版本管理</a> <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91/" style="font-size: 10px;">私有云</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10px;">缓存</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 16px;">编辑器</a> <a href="/tags/%E7%BD%91%E7%9B%98/" style="font-size: 10px;">网盘</a> <a href="/tags/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">网页设计</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 10px;">翻译</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 12px;">读书笔记</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 18px;">运维</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">undefined</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">undefined</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/categories/%E5%90%8E%E7%AB%AF">后端</a></li>
+		        
+					<li><a href="/categories/%E5%89%8D%E7%AB%AF">前端</a></li>
+		        
+					<li><a href="/categories/%E5%B7%A5%E5%85%B7">工具</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+					<li><a href="/links">资源</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xiaoyu5256" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/xiaoyu5256" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="douban" target="_blank" href="http://douban.com/people/xiaoyu5256" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-owncloud私有云盘安装笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/06/owncloud%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/" class="article-date">
+  	<time datetime="2016-08-06T07:32:06.000Z" itemprop="datePublished">2016-08-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      owncloud私有云盘安装笔记
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/owncloud/" rel="tag">owncloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91/" rel="tag">私有云</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BD%91%E7%9B%98/" rel="tag">网盘</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7/%E7%A7%81%E6%9C%89%E4%BA%91/">私有云</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装笔记"><a href="#安装笔记" class="headerlink" title="安装笔记"></a>安装笔记</h2><p>服务器环境centos6.8,其他的操作系统会不同，请看官方文档。</p>
+<ol>
+<li><p>php的版本必须5.4或5.4以上，安装php,mysql,apache我用操作系统自带的，操作系统若有之前版本php需卸载。</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">yum</span> install centos-release-SCL</span><br><span class="line"><span class="attribute">yum</span> install php<span class="number">54</span> php<span class="number">54</span>-php php<span class="number">54</span>-php-gd php<span class="number">54</span>-php-mbstring</span><br><span class="line"><span class="attribute">yum</span> install php<span class="number">54</span>-php-mysqlnd</span><br><span class="line"><span class="attribute">service</span> httpd restart</span><br><span class="line"><span class="attribute">chkconfig</span> httpd <span class="literal">on</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">yum</span> install mysql-server mysql mysql-devel</span><br><span class="line"><span class="attribute">service</span> mysqld start</span><br><span class="line"><span class="attribute">chkconfig</span> mysqld <span class="literal">on</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载owncloud</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">wget</span> https://download.owncloud.org/community/owncloud-<span class="number">9</span>.<span class="number">1</span>.<span class="number">0</span>.tar.bz<span class="number">2</span> --no-check-certificate</span><br><span class="line"><span class="attribute">tar</span> -jxvf owncloud-<span class="number">9</span>.<span class="number">1</span>.<span class="number">0</span>.tar.bz<span class="number">2</span></span><br><span class="line"><span class="attribute">mv</span> owncloud /var/www/</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+</li>
+<li><p>目录权限，执行以下脚本即可。</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line">ocpath=<span class="string">&#x27;/var/www/owncloud&#x27;</span></span><br><span class="line">htuser=<span class="string">&#x27;apache&#x27;</span></span><br><span class="line">htgroup=<span class="string">&#x27;apache&#x27;</span></span><br><span class="line">rootuser=<span class="string">&#x27;root&#x27;</span></span><br><span class="line"><span class="keyword">printf</span> <span class="string">&quot;Creating possible missing Directories\n&quot;</span></span><br><span class="line"><span class="keyword">mkdir</span> -p $ocpath/data</span><br><span class="line"><span class="keyword">mkdir</span> -p $ocpath/assets</span><br><span class="line"><span class="keyword">mkdir</span> -p $ocpath/updater</span><br><span class="line"><span class="keyword">printf</span> <span class="string">&quot;chmod Files and Directories\n&quot;</span></span><br><span class="line">find $&#123;ocpath&#125;/ -type f -<span class="keyword">print</span><span class="number">0</span> | xargs -<span class="number">0</span> <span class="keyword">chmod</span> <span class="number">0640</span></span><br><span class="line">find $&#123;ocpath&#125;/ -type d -<span class="keyword">print</span><span class="number">0</span> | xargs -<span class="number">0</span> <span class="keyword">chmod</span> <span class="number">0750</span></span><br><span class="line"><span class="keyword">printf</span> <span class="string">&quot;chown Directories\n&quot;</span></span><br><span class="line"><span class="keyword">chown</span> -R $&#123;rootuser&#125;:$&#123;htgroup&#125; $&#123;ocpath&#125;/</span><br><span class="line"><span class="keyword">chown</span> -R $&#123;htuser&#125;:$&#123;htgroup&#125; $&#123;ocpath&#125;/apps/</span><br><span class="line"><span class="keyword">chown</span> -R $&#123;htuser&#125;:$&#123;htgroup&#125; $&#123;ocpath&#125;/assets/</span><br><span class="line"><span class="keyword">chown</span> -R $&#123;htuser&#125;:$&#123;htgroup&#125; $&#123;ocpath&#125;/config/</span><br><span class="line"><span class="keyword">chown</span> -R $&#123;htuser&#125;:$&#123;htgroup&#125; $&#123;ocpath&#125;/data/</span><br><span class="line"><span class="keyword">chown</span> -R $&#123;htuser&#125;:$&#123;htgroup&#125; $&#123;ocpath&#125;/themes/</span><br><span class="line"><span class="keyword">chown</span> -R $&#123;htuser&#125;:$&#123;htgroup&#125; $&#123;ocpath&#125;/updater/</span><br><span class="line"><span class="keyword">chmod</span> +<span class="keyword">x</span> $&#123;ocpath&#125;/occ</span><br><span class="line"><span class="keyword">printf</span> <span class="string">&quot;chmod/chown .htaccess\n&quot;</span></span><br><span class="line"><span class="keyword">if</span> [ -f $&#123;ocpath&#125;/.htaccess ]</span><br><span class="line">then</span><br><span class="line"><span class="keyword">chmod</span> <span class="number">0644</span> $&#123;ocpath&#125;/.htaccess</span><br><span class="line"><span class="keyword">chown</span> $&#123;rootuser&#125;:$&#123;htgroup&#125; $&#123;ocpath&#125;/.htaccess</span><br><span class="line">fi</span><br><span class="line"><span class="keyword">if</span> [ -f $&#123;ocpath&#125;/data/.htaccess ]</span><br><span class="line">then</span><br><span class="line"><span class="keyword">chmod</span> <span class="number">0644</span> $&#123;ocpath&#125;/data/.htaccess</span><br><span class="line"><span class="keyword">chown</span> $&#123;rootuser&#125;:$&#123;htgroup&#125; $&#123;ocpath&#125;/data/.htaccess</span><br><span class="line">fi</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装owncloud</p>
+<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">sudo</span> -<span class="string">u</span> <span class="string">apache</span> <span class="string">php</span> <span class="string">occ</span> <span class="string">maintenance:install </span><span class="built_in">--database</span> <span class="string">&quot;mysql&quot;</span> <span class="built_in">--database-name</span> <span class="string">&quot;owncloud&quot;</span> <span class="built_in">--database-user</span> <span class="string">&quot;root&quot;</span> <span class="built_in">--database-pass</span> <span class="string">&quot;&quot;</span> <span class="built_in">--admin-user</span> <span class="string">&quot;admin&quot;</span> <span class="built_in">--admin-pass</span> <span class="string">&quot;owncloudpasswd&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置apache服务。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>httpd<span class="regexp">/conf.d/</span>owncloud.conf</span><br></pre></td></tr></table></figure>
+<p> 添加内容：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">nameVirtualHost</span> *:<span class="number">80</span></span><br><span class="line"><span class="section">&lt;VirtualHost *<span class="number">:80</span>&gt;</span></span><br><span class="line">    <span class="attribute">ServerAdmin</span> webmaster@cloud.me</span><br><span class="line">    <span class="attribute"><span class="nomarkup">DocumentRoot</span></span> /var/www/owncloud</span><br><span class="line">    <span class="attribute"><span class="nomarkup">ServerName</span></span> cloud.me</span><br><span class="line">    <span class="attribute">ErrorLog</span> logs/cloud.me-error_log</span><br><span class="line">    <span class="attribute">CustomLog</span> logs/cloud.me-access_log common</span><br><span class="line"><span class="section">&lt;/VirtualHost&gt;</span></span><br></pre></td></tr></table></figure>
+<p> 查看日志，执行<code>tail -f /var/log/httpd/cloud.me-error_log</code>即可。</p>
+</li>
+<li><p>修改owncloud配置。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/var/</span>www<span class="regexp">/owncloud/</span>config/config.php</span><br></pre></td></tr></table></figure>
+<p> 修改<code>overwrite.cli.url</code>成自己的域名，<code>trusted_domains</code>添加自己的域名。</p>
+</li>
+<li><p>开启https。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install mod_ssl</span><br><span class="line">mkdir <span class="regexp">/etc/</span>httpd/ssl</span><br></pre></td></tr></table></figure>
+<p> 生成证书</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl req -x509 -nodes -days <span class="number">365</span> -newkey rsa:<span class="number">2048</span> -keyout <span class="regexp">/etc/</span>httpd<span class="regexp">/ssl/</span>apache.key -out <span class="regexp">/etc/</span>httpd<span class="regexp">/ssl/</span>apache.crt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 导入证书</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd <span class="regexp">/var/</span>www/owncloud</span><br><span class="line">sudo -u apache <span class="regexp">/opt/</span>rh<span class="regexp">/php54/</span>root<span class="regexp">/usr/</span>bin<span class="regexp">/php occ security:certificates:import /</span>etc<span class="regexp">/httpd/</span>ssl/apache.crt</span><br></pre></td></tr></table></figure>
+<p> 添加apache的ssl配置</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi <span class="regexp">/etc/</span>httpd<span class="regexp">/conf.d/</span>owncloud-ssl.conf</span><br></pre></td></tr></table></figure>
+<p> 内容如下：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute"><span class="nomarkup">LoadModule</span></span> ssl_module modules/mod_ssl.so</span><br><span class="line"><span class="attribute"><span class="nomarkup">Listen</span></span> <span class="number">443</span></span><br><span class="line"></span><br><span class="line"><span class="section">&lt;VirtualHost *<span class="number">:80</span>&gt;</span></span><br><span class="line">  <span class="attribute">ServerAdmin</span> youremail</span><br><span class="line">  <span class="attribute"><span class="nomarkup">ServerName</span></span> yourdomain</span><br><span class="line">  <span class="attribute">Redirect</span> permanent / https://yourdomain/</span><br><span class="line"><span class="section">&lt;/VirtualHost&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="section">&lt;VirtualHost *<span class="number">:443</span>&gt;</span></span><br><span class="line"><span class="attribute"><span class="nomarkup">ServerName</span></span> yourdomain</span><br><span class="line"><span class="attribute">SSLEngine</span> <span class="literal">on</span></span><br><span class="line"><span class="attribute">SSLCertificateFile</span>      /etc/httpd/ssl/apache.crt</span><br><span class="line"><span class="attribute">SSLCertificateKeyFile</span>   /etc/httpd/ssl/apache.key</span><br><span class="line"><span class="attribute"><span class="nomarkup">DocumentRoot</span></span> /var/www/owncloud</span><br><span class="line"><span class="section">&lt;/VirtualHost&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="8">
+<li>浏览器打开网页，访问自己域名。</li>
+</ol>
+<blockquote>
+<p>参考<br><a target="_blank" rel="noopener" href="http://huifeng.me/2016/05/03/owncloud-install/">Owncloud　安装实录(Apache2.4+PHP7+MariaDB10)</a><br><a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-centos-6">How To Create a SSL Certificate on Apache for CentOS 6</a><br><a target="_blank" rel="noopener" href="https://kerrenortlepp.wordpress.com/2015/03/16/how-to-setup-owncloud-8-for-personal-use-on-centos-7-with-ssl/">https://kerrenortlepp.wordpress.com/2015/03/16/how-to-setup-owncloud-8-for-personal-use-on-centos-7-with-ssl/</a></p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/09/node-js%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          node.js总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/23/redis%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">redis总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="owncloud私有云盘安装笔记" data-title="owncloud私有云盘安装笔记" data-url="http://showmecode.cn/2016/08/06/owncloud%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"showmecode"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2021 晓宇
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?d19398d6ff57c46d4b3620064d731f80";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

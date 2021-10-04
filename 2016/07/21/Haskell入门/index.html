@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Haskell入门 | Show me code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Haskell入门Haskell Platform 基本语法函数 打开编辑器，输入内容，保存为fun.hs123doubleMe x &#x3D; x + xdoubleUs x y &#x3D; doubleMe x + doubleMe ydoubleSmallNumber&amp;#x27; x &#x3D; (if x&gt;100 then x else x+x) + 1打开命令行，执行：123456789101112ghc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Haskell入门">
+<meta property="og:url" content="http://showmecode.cn/2016/07/21/Haskell%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="Show me code">
+<meta property="og:description" content="Haskell入门Haskell Platform 基本语法函数 打开编辑器，输入内容，保存为fun.hs123doubleMe x &#x3D; x + xdoubleUs x y &#x3D; doubleMe x + doubleMe ydoubleSmallNumber&amp;#x27; x &#x3D; (if x&gt;100 then x else x+x) + 1打开命令行，执行：123456789101112ghc">
+<meta property="og:locale">
+<meta property="article:published_time" content="2016-07-21T12:10:08.000Z">
+<meta property="article:modified_time" content="2020-08-19T12:08:01.300Z">
+<meta property="article:author" content="晓宇">
+<meta property="article:tag" content="Haskell">
+<meta property="article:tag" content="函数式编程">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Show me code" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+<!--
+		<hgroup>
+		  <h1 class="header-author"><a href="/">undefined</a></h1>
+		</hgroup>
+-->
+        <hgroup>
+            <h2 class="header-title">undefined</h2>
+        </hgroup>
+        
+
+
+
+<!--
+		
+--> 
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/categories/%E5%90%8E%E7%AB%AF">后端</a></li>
+				        
+							<li><a href="/categories/%E5%89%8D%E7%AB%AF">前端</a></li>
+				        
+							<li><a href="/categories/%E5%B7%A5%E5%85%B7">工具</a></li>
+				        
+							<li><a href="/archives">归档</a></li>
+				        
+							<li><a href="/links">资源</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xiaoyu5256" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/xiaoyu5256" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="douban" target="_blank" href="http://douban.com/people/xiaoyu5256" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Haskell/" style="font-size: 10px;">Haskell</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/VMWare/" style="font-size: 14px;">VMWare</a> <a href="/tags/Xshell/" style="font-size: 10px;">Xshell</a> <a href="/tags/brew/" style="font-size: 10px;">brew</a> <a href="/tags/centos/" style="font-size: 14px;">centos</a> <a href="/tags/ceph/" style="font-size: 10px;">ceph</a> <a href="/tags/compass/" style="font-size: 10px;">compass</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/oracle/" style="font-size: 12px;">oracle</a> <a href="/tags/owncloud/" style="font-size: 10px;">owncloud</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/postgresql/" style="font-size: 10px;">postgresql</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tmux/" style="font-size: 10px;">tmux</a> <a href="/tags/vim/" style="font-size: 12px;">vim</a> <a href="/tags/visual-studio/" style="font-size: 10px;">visual studio</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">函数式编程</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14px;">前端</a> <a href="/tags/%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/" style="font-size: 10px;">加密解密</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 10px;">后端</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 12px;">命令行</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 12px;">存储</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 20px;">开发工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 12px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16px;">数据库</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 10px;">树莓派</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 10px;">正则表达式</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 12px;">版本管理</a> <a href="/tags/%E7%A7%81%E6%9C%89%E4%BA%91/" style="font-size: 10px;">私有云</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10px;">缓存</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 10px;">编程语言</a> <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 16px;">编辑器</a> <a href="/tags/%E7%BD%91%E7%9B%98/" style="font-size: 10px;">网盘</a> <a href="/tags/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">网页设计</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 10px;">翻译</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 12px;">读书笔记</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 18px;">运维</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">undefined</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">undefined</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/categories/%E5%90%8E%E7%AB%AF">后端</a></li>
+		        
+					<li><a href="/categories/%E5%89%8D%E7%AB%AF">前端</a></li>
+		        
+					<li><a href="/categories/%E5%B7%A5%E5%85%B7">工具</a></li>
+		        
+					<li><a href="/archives">归档</a></li>
+		        
+					<li><a href="/links">资源</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xiaoyu5256" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/xiaoyu5256" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="douban" target="_blank" href="http://douban.com/people/xiaoyu5256" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Haskell入门" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/21/Haskell%E5%85%A5%E9%97%A8/" class="article-date">
+  	<time datetime="2016-07-21T12:10:08.000Z" itemprop="datePublished">2016-07-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Haskell入门
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Haskell/" rel="tag">Haskell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="tag">函数式编程</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/Haskell/">Haskell</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Haskell入门"><a href="#Haskell入门" class="headerlink" title="Haskell入门"></a>Haskell入门</h2><p><a target="_blank" rel="noopener" href="http://hackage.haskell.org/platform">Haskell Platform</a></p>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><hr>
+<p>打开编辑器，输入内容，保存为<code>fun.hs</code><br><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">doubleMe <span class="keyword">x</span> <span class="operator">=</span> <span class="keyword">x</span> + <span class="keyword">x</span></span><br><span class="line">doubleUs <span class="keyword">x</span> y <span class="operator">=</span> doubleMe <span class="keyword">x</span> + doubleMe y</span><br><span class="line">doubleSmallNumber&#x27; <span class="keyword">x</span> <span class="operator">=</span> (if <span class="keyword">x</span>&gt;<span class="number">100</span> then <span class="keyword">x</span> else <span class="keyword">x</span>+<span class="keyword">x</span>) + <span class="number">1</span></span><br></pre></td></tr></table></figure><br>打开命令行，执行：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; :l fun</span><br><span class="line">ghci&gt; doubleMe <span class="number">9</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line">ghci&gt;doubleUs <span class="number">10</span> <span class="number">20</span></span><br><span class="line"><span class="number">60</span></span><br><span class="line"></span><br><span class="line">ghci&gt;doubleSmallNumbe<span class="string">r&#x27; 10</span></span><br><span class="line"><span class="string">21</span></span><br><span class="line"><span class="string">ghci&gt;dou</span></span><br><span class="line"><span class="string">ghci&gt;doubleSmallNumber&#x27;</span> <span class="number">101</span></span><br><span class="line"><span class="number">102</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<span id="more"></span>
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><hr>
+<p><strong>拼接,使用<code>++</code></strong></p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] ++ [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"></span><br><span class="line">ghci&gt;<span class="string">&quot;Hello&quot;</span> ++ <span class="string">&quot; &quot;</span> ++ <span class="string">&quot;World!&quot;</span></span><br><span class="line"><span class="string">&quot;Hello World!&quot;</span></span><br><span class="line"></span><br><span class="line">ghci&gt;[<span class="string">&#x27;h&#x27;</span>,<span class="string">&#x27;e&#x27;</span>] ++ [<span class="string">&#x27;l&#x27;</span>,<span class="string">&#x27;l&#x27;</span>,<span class="string">&#x27;o&#x27;</span>]</span><br><span class="line"><span class="string">&quot;hello&quot;</span></span><br></pre></td></tr></table></figure>
+<p>“Hello”等价于[‘H’,’e’,’l’,’l’,’o’]</p>
+<p><strong>在头部插入,使用<code>:</code></strong></p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;<span class="string">&#x27;H&#x27;</span>:<span class="string">&quot;ello&quot;</span></span><br><span class="line"><span class="string">&quot;Hello&quot;</span></span><br><span class="line"></span><br><span class="line">ghci&gt;<span class="number">5</span>:[<span class="number">6</span>,<span class="number">1</span>,<span class="number">3</span>]</span><br><span class="line">[<span class="number">5</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+<p><strong>访问列表，使用<code>!!</code></strong></p>
+<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;<span class="string">&quot;Hello&quot;</span>!!<span class="number">2</span></span><br><span class="line"><span class="string">&#x27;l&#x27;</span></span><br><span class="line">ghci&gt;[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]!!<span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ghci</span>&gt;<span class="number">5</span> `elem`<span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">True</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;<span class="number">6</span> `elem`<span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">False</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;elem <span class="number">5</span><span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">True</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;elem <span class="number">6</span><span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">False</span></span><br></pre></td></tr></table></figure>
+<p><strong>比较列表，使用<code>&gt;</code>,<code>&lt;</code>,<code>&lt;=</code>,<code>&gt;=</code></strong><br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ghci</span>&gt;[<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>] &gt;<span class="meta"> [3,4,1]</span></span><br><span class="line"><span class="attribute">False</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p><strong>其他操作</strong><br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ghci</span>&gt;head<span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">5</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;tail<span class="meta"> [5,4,3,2,1]</span><span class="meta"></span></span><br><span class="line"><span class="meta">[4,3,2,1]</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;last<span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">1</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;init<span class="meta"> [5,4,3,2,1]</span><span class="meta"></span></span><br><span class="line"><span class="meta">[5,4,3,2]</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;length<span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">5</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;null<span class="meta"> [1,2,3]</span></span><br><span class="line"><span class="attribute">False</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;null<span class="meta"> []</span></span><br><span class="line"><span class="attribute">True</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;reverse<span class="meta"> [5,4,3,2,1]</span><span class="meta"></span></span><br><span class="line"><span class="meta">[1,2,3,4,5]</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;take <span class="number">3</span><span class="meta"> [5,4,3,2,1]</span><span class="meta"></span></span><br><span class="line"><span class="meta">[5,4,3]</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;take <span class="number">0</span><span class="meta"> [5,4,3,2,1]</span><span class="meta"></span></span><br><span class="line"><span class="meta">[]</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;drop <span class="number">3</span> <span class="meta"> [5,4,3,2,1]</span><span class="meta"></span></span><br><span class="line"><span class="meta">[2,1]</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;drop <span class="number">100</span> <span class="meta"> [5,4,3,2,1]</span><span class="meta"></span></span><br><span class="line"><span class="meta">[]</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;maximum<span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">5</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;minimum<span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">1</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;sum<span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">15</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;product<span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">120</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;<span class="number">5</span> `elem`<span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">True</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;<span class="number">6</span> `elem`<span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">False</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;elem <span class="number">5</span><span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">True</span></span><br><span class="line"><span class="attribute">ghci</span>&gt;elem <span class="number">6</span><span class="meta"> [5,4,3,2,1]</span></span><br><span class="line"><span class="attribute">False</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h4 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h4><hr>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;[<span class="number">1.</span><span class="number">.30</span>]</span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>,<span class="number">16</span>,<span class="number">17</span>,<span class="number">18</span>,<span class="number">19</span>,<span class="number">20</span>,<span class="number">21</span>,<span class="number">22</span>,<span class="number">23</span>,<span class="number">24</span>,<span class="number">25</span>,<span class="number">26</span>,<span class="number">27</span>,<span class="number">28</span>,<span class="number">29</span>,<span class="number">30</span>]</span><br><span class="line"></span><br><span class="line">ghci&gt;[<span class="number">1</span>,<span class="number">3.</span><span class="number">.30</span>]</span><br><span class="line">[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">11</span>,<span class="number">13</span>,<span class="number">15</span>,<span class="number">17</span>,<span class="number">19</span>,<span class="number">21</span>,<span class="number">23</span>,<span class="number">25</span>,<span class="number">27</span>,<span class="number">29</span>]</span><br><span class="line"></span><br><span class="line">ghci&gt;[<span class="string">&#x27;a&#x27;</span>..<span class="string">&#x27;f&#x27;</span>]</span><br><span class="line"><span class="string">&quot;abcdef&quot;</span></span><br><span class="line"></span><br><span class="line">ghci&gt;[<span class="number">2</span>,<span class="number">4.</span><span class="number">.6</span>*<span class="number">2</span>]</span><br><span class="line">[<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>,<span class="number">12</span>]</span><br><span class="line"></span><br><span class="line">ghci&gt;take <span class="number">6</span> [<span class="number">2</span>,<span class="number">4.</span>.]</span><br><span class="line">[<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>,<span class="number">12</span>]</span><br><span class="line"></span><br><span class="line">ghci&gt;take <span class="number">5</span> (cycle [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">ghci&gt;take <span class="number">5</span> (repeat <span class="number">1</span>)</span><br><span class="line">[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">ghci&gt;replicate <span class="number">4</span> <span class="number">10</span></span><br><span class="line">[<span class="number">10</span>,<span class="number">10</span>,<span class="number">10</span>,<span class="number">10</span>]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="列表推导"><a href="#列表推导" class="headerlink" title="列表推导"></a>列表推导</h4><hr>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ghci</span>&gt;[x*<span class="number">2</span>|x&lt;-[<span class="number">1</span>..<span class="number">10</span>]]<span class="meta"></span></span><br><span class="line"><span class="meta">[2,4,6,8,10,12,14,16,18,20]</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">ghci</span>&gt;[x*<span class="number">2</span>|x&lt;-[<span class="number">1</span>..<span class="number">10</span>],x&gt;<span class="number">5</span>]<span class="meta"></span></span><br><span class="line"><span class="meta">[12,14,16,18,20]</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">ghci</span>&gt;[x+y|x&lt;-[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],y&lt;-[<span class="number">100</span>,<span class="number">101</span>,<span class="number">102</span>]]<span class="meta"></span></span><br><span class="line"><span class="meta">[101,102,103,102,103,104,103,104,105]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h4><hr>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;fst (<span class="number">1</span>,<span class="string">&quot;hello&quot;</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"></span><br><span class="line">ghci&gt;snd (<span class="number">1</span>,<span class="string">&quot;hello&quot;</span>)</span><br><span class="line"><span class="string">&quot;hello&quot;</span></span><br><span class="line"></span><br><span class="line">ghci&gt;zip [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] [<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br><span class="line">[(<span class="number">1</span>,<span class="number">3</span>),(<span class="number">2</span>,<span class="number">2</span>),(<span class="number">3</span>,<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line">ghci&gt;zip [<span class="number">1.</span>.] [<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>]</span><br><span class="line">[(<span class="number">1</span>,<span class="string">&quot;a&quot;</span>),(<span class="number">2</span>,<span class="string">&quot;b&quot;</span>),(<span class="number">3</span>,<span class="string">&quot;c&quot;</span>)]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h4><hr>
+<p><strong>简单模式匹配</strong></p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lucky :: <span class="built_in">Int</span> -&gt; <span class="built_in">String</span></span><br><span class="line">lucky <span class="number">7</span> = <span class="string">&quot;LUCKY NUMBER SEVEN&quot;</span></span><br><span class="line">lucky x = <span class="string">&quot;Default Hello!&quot;</span></span><br></pre></td></tr></table></figure>
+<p>由上到下进行匹配，<code>x</code>为匹配任何值,执行结果如下：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;lucky <span class="number">7</span></span><br><span class="line"><span class="string">&quot;LUCKY NUMBER SEVEN&quot;</span></span><br><span class="line">ghci&gt;lucky <span class="number">9</span></span><br><span class="line"><span class="string">&quot;Default Hello!&quot;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>阶乘计算：</strong><br><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">factorial <span class="symbol">:</span><span class="symbol">:</span> <span class="built_in">Int</span> -&gt; <span class="built_in">Int</span></span><br><span class="line">factorial <span class="number">0</span> = <span class="number">1</span></span><br><span class="line">factorial <span class="built_in">n</span> = <span class="built_in">n</span>*(factorial (<span class="built_in">n</span>-<span class="number">1</span>))</span><br></pre></td></tr></table></figure><br>执行结果：<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ghci</span>&gt;factorial <span class="number">10</span></span><br><span class="line"><span class="attribute">3628800</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>元组模式匹配</strong><br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">addVector</span> :: (Double,Double) -&gt; (Double,Double) -&gt; (Double,Double)</span><br><span class="line"><span class="attribute">addVector</span> (x<span class="number">1</span>,y<span class="number">1</span>) (x<span class="number">2</span>,y<span class="number">2</span>) = (x<span class="number">1</span>+x<span class="number">2</span>,y<span class="number">1</span>+y<span class="number">2</span>)</span><br></pre></td></tr></table></figure><br>执行结果：<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;addVector <span class="comment">(1,2)</span> <span class="comment">(3,4)</span></span><br><span class="line"><span class="comment">(4.0,6.0)</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>列表模式匹配</strong><br><figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">head&#x27; :: [a]-&gt;a</span><br><span class="line">head&#x27; <span class="literal">[]</span> = error <span class="string">&quot;list can&#x27;t be empty&quot;</span></span><br><span class="line">head&#x27; (x:_) = x</span><br></pre></td></tr></table></figure><br>执行结果：</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;head<span class="comment">&#x27; [1,2,3,4]</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line">ghci&gt;head<span class="comment">&#x27; []</span></span><br><span class="line">*** Exception: list can<span class="comment">&#x27;t be empty</span></span><br><span class="line">CallStack (<span class="keyword">from</span> HasCallStack):</span><br><span class="line">  <span class="keyword">error</span>, called at fun.hs:<span class="number">18</span>:<span class="number">12</span> <span class="keyword">in</span> main:Main</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>匹配时使用<code>@</code>引用全部</strong><br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firstletter <span class="type">:: String</span>-&gt;<span class="built_in">String</span></span><br><span class="line">firstletter <span class="string">&quot;&quot;</span>=<span class="string">&quot;Empty String,whoops&quot;</span></span><br><span class="line">firstletter <span class="literal">all</span>@(x:_) = <span class="string">&quot;The first letter of &quot;</span> ++ <span class="literal">all</span> ++ <span class="string">&quot; is &quot;</span> ++ <span class="meta">[</span>x<span class="meta">]</span></span><br></pre></td></tr></table></figure><br>执行结果：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;firstletter <span class="string">&quot;Hello&quot;</span></span><br><span class="line"><span class="string">&quot;The first letter of Hello is H&quot;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>检查参数是否为真</strong><br><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">bmiTell::Double-&gt;Double-&gt;String</span><br><span class="line">bmiTell weight height</span><br><span class="line">  | <span class="type">bmi</span> &lt;= <span class="number">18.5</span> = <span class="string">&quot;You&#x27;re underweight,you emo,you&quot;</span> </span><br><span class="line">  | <span class="type">bmi</span> &lt;= <span class="number">25.5</span> = <span class="string">&quot;Normal&quot;</span></span><br><span class="line">  | <span class="type">bmi</span> &lt;= <span class="number">30.0</span> = <span class="string">&quot;Fat&quot;</span></span><br><span class="line">  | <span class="type">otherwise</span> = <span class="string">&quot;Whale&quot;</span></span><br><span class="line">  <span class="keyword">where</span> bmi = weight/height^<span class="number">2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;<span class="keyword">bmiTell </span><span class="number">70</span> <span class="number">1</span>.<span class="number">69</span></span><br><span class="line"><span class="string">&quot;Normal&quot;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>where中模式匹配</strong><br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">initials :: <span class="built_in">String</span> -&gt; <span class="built_in">String</span> -&gt; <span class="built_in">String</span></span><br><span class="line">initials firstname lastname = [f] ++ <span class="string">&quot;.&quot;</span> ++ [l]</span><br><span class="line">    <span class="keyword">where</span> (f:_) = firstname</span><br><span class="line">          (l:_) = lastname</span><br></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;initials <span class="string">&quot;xiaoyu&quot;</span> <span class="string">&quot;cheng&quot;</span></span><br><span class="line"><span class="string">&quot;x.c&quot;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>where中使用函数</strong><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">calBmi:</span>:(<span class="type">Double</span>,<span class="type">Double</span>)-&gt;<span class="type">Double</span></span><br><span class="line">calBmi (w,h) = bmi w h</span><br><span class="line">  <span class="keyword">where</span> bmi weight height = weight/height^<span class="number">2</span></span><br></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ghci</span>&gt;calBmi (<span class="number">70</span>,<span class="number">1</span>.<span class="number">69</span>)</span><br><span class="line"><span class="attribute">24</span>.<span class="number">508945765204302</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>let</strong><br><code>let</code>表达式的格式为<code>let &lt;bindings&gt; in &lt;expressions&gt;</code>。<code>let</code>中绑定的名字仅对<code>in</code>部分可见。</p>
+<ul>
+<li>在局部作用域中定义函数<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;[<span class="built_in">let</span> <span class="built_in">square</span> x = x*x in (<span class="built_in">square</span> <span class="number">2</span>,<span class="built_in">square</span> <span class="number">3</span>,<span class="built_in">square</span> <span class="number">4</span>)]</span><br><span class="line">[(<span class="number">4</span>,<span class="number">9</span>,<span class="number">16</span>)]</span><br></pre></td></tr></table></figure></li>
+<li>一行中绑定多个名字<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;(let <span class="attribute">a</span>=100;b=200;c=300 <span class="keyword">in</span> a<span class="number">*b</span><span class="number">*c</span>,let <span class="attribute">foo</span>=<span class="string">&quot;Hey&quot;</span>;bar=&quot;there&quot; <span class="keyword">in</span> foo ++ bar)</span><br><span class="line">(6000000,<span class="string">&quot;Heythere&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>从元组中匹配取值<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ghci</span>&gt;(let (a,b,c) =(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) in a+b+c)*<span class="number">100</span></span><br><span class="line"><span class="attribute">600</span></span><br></pre></td></tr></table></figure></li>
+<li>列表推导中使用<code>let</code><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">calcBmis :: [(<span class="type">Double</span>,<span class="type">Double</span>)] -&gt; [<span class="type">Double</span>]</span><br><span class="line">calcBmis xs = [bmi|(w,h)&lt;-xs,<span class="keyword">let</span> bmi=w/h^<span class="number">2</span>,bmi&gt;<span class="number">25</span>]</span><br></pre></td></tr></table></figure>
+执行结果:<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ghci</span>&gt;calcBmis<span class="meta"> [(70,1.65),(70,1.6)]</span><span class="meta"></span></span><br><span class="line"><span class="meta">[25.71166207529844,27.343749999999996]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>case表达式</strong></p>
+<blockquote>
+<p>case表达式语法结构：<br>case expression of pattern -&gt; result<br>                   pattern -&gt; result<br>                   pattern -&gt; result</p>
+</blockquote>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">describeList</span> :: [a] -&gt;</span> String</span><br><span class="line"><span class="function"><span class="title">describeList</span> ls = &quot;The list <span class="keyword">is</span> &quot; ++ case ls of [] -&gt;</span> <span class="string">&quot;empty.&quot;</span></span><br><span class="line">                                               [<span class="function"><span class="title">x</span>] -&gt;</span> <span class="string">&quot;a singleton list.&quot;</span></span><br><span class="line">                                               <span class="function"><span class="title">xs</span> -&gt;</span> <span class="string">&quot;a longer list.&quot;</span></span><br></pre></td></tr></table></figure>
+<p>执行结果：<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;describeList []</span><br><span class="line"><span class="string">&quot;The list is empty.&quot;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h4><hr>
+<p><strong>简单递归</strong><br><figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">maximum&#x27; ::(<span class="type">Ord</span> a)=&gt; [a]-&gt;a</span><br><span class="line">maximum&#x27; <span class="literal">[]</span>= error <span class="string">&quot;maximum of empty list&quot;</span></span><br><span class="line">maximum&#x27; [x]=x</span><br><span class="line">maximum&#x27; (x:xs)=max x (maximum&#x27; xs)</span><br></pre></td></tr></table></figure><br>执行结果：<br><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;maximum [<span class="number">54,2,4,5</span>,<span class="number">6,756,34</span>]</span><br><span class="line"><span class="number">756</span></span><br></pre></td></tr></table></figure><br><strong>replicate</strong><br><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">replicat<span class="string">e&#x27; :: Int -&gt; a -&gt; [a]</span></span><br><span class="line"><span class="string">replicate&#x27;</span> n x</span><br><span class="line">    | n &lt;= <span class="number">0</span> = []</span><br><span class="line">    | otherwise = x:replicat<span class="string">e&#x27; (n-1) x</span></span><br></pre></td></tr></table></figure><br>执行结果：<br><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;replicat<span class="string">e&#x27; 10 &#x27;</span>x<span class="string">&#x27;</span></span><br><span class="line"><span class="string">&quot;xxxxxxxxxx&quot;</span></span><br><span class="line"><span class="string">ghci&gt;replicate&#x27;</span> <span class="number">10</span> <span class="number">8</span></span><br><span class="line">[<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>]</span><br></pre></td></tr></table></figure></p>
+<p><strong>take</strong><br><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tak<span class="string">e&#x27; :: (Num i,Ord i) =&gt; i -&gt;[a]-&gt;[a]</span></span><br><span class="line"><span class="string">take&#x27;</span> n _</span><br><span class="line">    |n&lt;=<span class="number">0</span> = []</span><br><span class="line">tak<span class="string">e&#x27; _ [] = []</span></span><br><span class="line"><span class="string">take&#x27;</span> n (x:xs)= x:tak<span class="string">e&#x27; (n-1) xs</span></span><br></pre></td></tr></table></figure><br>运行结果:<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ghci</span>&gt;take&#x27; <span class="number">2</span><span class="meta"> [1,23,4,5]</span><span class="meta"></span></span><br><span class="line"><span class="meta">[1,23]</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>reverse</strong><br><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">revers<span class="string">e&#x27; :: [a]-&gt;[a]</span></span><br><span class="line"><span class="string">reverse&#x27;</span> []=[]</span><br><span class="line">revers<span class="string">e&#x27; (x:xs) = reverse&#x27;</span> xs ++ [x]</span><br></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;reverse&#x27; <span class="string">[1,2,3,4,5]</span></span><br><span class="line"><span class="string">[5,4,3,2,1]</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>repeat</strong><br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repeat</span><span class="comment">&#x27; :: a-&gt;[a]</span></span><br><span class="line"><span class="keyword">repeat</span><span class="comment">&#x27; a = a:repeat&#x27; a</span></span><br></pre></td></tr></table></figure><br>执行结果：<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repeat</span><span class="comment">&#x27; :: a-&gt;[a]</span></span><br><span class="line"><span class="keyword">repeat</span><span class="comment">&#x27; a = a:repeat&#x27; a</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>zip</strong><br><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zip&#x27; :: <span class="comment">[a]</span>-&gt;<span class="comment">[b]</span>-&gt;<span class="comment">[(a,b)]</span></span><br><span class="line">zip&#x27; _ <span class="comment">[]</span> = <span class="comment">[]</span></span><br><span class="line">zip&#x27; <span class="comment">[]</span> _ = <span class="comment">[]</span></span><br><span class="line">zip&#x27; (x:xs) (y:ys) = (x,y):zip&#x27; xs ys</span><br></pre></td></tr></table></figure><br>执行结果：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;zip <span class="selector-attr">[1,2]</span> <span class="selector-attr">[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>]</span></span><br><span class="line"><span class="selector-attr">[(1,<span class="string">&#x27;a&#x27;</span>),(2,<span class="string">&#x27;b&#x27;</span>)]</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>elem</strong><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">elem<span class="comment">&#x27; :: (Eq a)=&gt;a-&gt;[a]-&gt;Bool</span></span><br><span class="line">elem<span class="comment">&#x27; a [] = False</span></span><br><span class="line">elem<span class="comment">&#x27; a (x:xs)</span></span><br><span class="line">    | a==x = <span class="literal">True</span></span><br><span class="line">    | otherwise = elem<span class="comment">&#x27; a xs</span></span><br></pre></td></tr></table></figure><br>执行结果：<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ghci</span>&gt;elem&#x27; <span class="number">1</span><span class="meta"> [2,3,4,1]</span></span><br><span class="line"><span class="attribute">True</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>快速排序</strong><br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">quicksort :: (Ord <span class="keyword">a</span>) =&gt; [<span class="keyword">a</span>]-&gt;[<span class="keyword">a</span>]</span><br><span class="line">quicksort [] = []</span><br><span class="line">quicksort (x:xs) = </span><br><span class="line">    let smaller = [<span class="keyword">a</span>|<span class="keyword">a</span>&lt;-xs,<span class="keyword">a</span>&lt;=x]</span><br><span class="line">        larger = [<span class="keyword">a</span>|<span class="keyword">a</span>&lt;-xs,<span class="keyword">a</span>&gt;x]</span><br><span class="line">    <span class="keyword">in</span> quicksort smaller ++ [x]  ++ quicksort larger</span><br></pre></td></tr></table></figure><br>执行结果：<br><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt;quicksort [<span class="number">2,3,4,5</span>,<span class="number">8,67,4,3</span>,<span class="number">6,5,7,6</span>,<span class="number">7</span>,<span class="number">7</span>]</span><br><span class="line">[<span class="number">2,3,3,4</span>,<span class="number">4,5,5,6</span>,<span class="number">6,7,7,7</span>,<span class="number">8</span>,<span class="number">67</span>]</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/23/redis%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          redis总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/21/openssl%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">openssl加密解密</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Haskell入门" data-title="Haskell入门" data-url="http://showmecode.cn/2016/07/21/Haskell%E5%85%A5%E9%97%A8/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"showmecode"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2021 晓宇
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?d19398d6ff57c46d4b3620064d731f80";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
