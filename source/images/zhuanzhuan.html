@@ -2,107 +2,101 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>zhuanzhuan</title>
+    <title>转转</title>
 </head>
 <body>
-<div id="zhuanzhuan_table"></div>
-<script src="https://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-<script>
-    var books = [];
-    function collect(isbn13){
-        var key = "book_isbn13_collected";
-        var books_isbn = JSON.parse(localStorage.getItem(key))||{};
-        books_isbn[isbn13]=1;
-        localStorage.setItem(key,JSON.stringify(books_isbn));
-        alert("已收藏");
 
-    }
-    function uncollect(isbn13){
-        var key = "book_isbn13_collected";
-        var books_isbn = JSON.parse(localStorage.getItem(key))||{};
-        delete books_isbn[isbn13];
-        localStorage.setItem(key,JSON.stringify(books_isbn));
-
-        key = "book_isbn13_passed";
-        var books_passed = JSON.parse(localStorage.getItem(key))||{};
-        books_passed[isbn13]=1;
-        localStorage.setItem(key,JSON.stringify(books_passed));
-
-        alert("已取消收藏");
-
-    }
-    function pass_all(){
-        var key = "book_isbn13_passed";
-        var books_passed = JSON.parse(localStorage.getItem(key))||{};
-        var books_collected_key = "book_isbn13_collected";
-        var books_collected = JSON.parse(localStorage.getItem(books_collected_key))||{};
-        $.each(books,function(index,book){
-            if(!books_collected[book.isbn13]){
-                books_passed[book.isbn13]=1;
-            }
-        });
-        localStorage.setItem(key,JSON.stringify(books_passed));
-        alert("已看");
-    }
-    $(function () {
-        var cateIds=[2113013,2113014,2113015,2113016,2113017,2113018,2113019,100];
-        // var cateIds=[2113018];
-        var key = "book_isbn13_passed";
-        var books_passed = JSON.parse(localStorage.getItem(key))||{};
-        var books_exist = {};
-        var render_books = function (books) {
-            books.sort(function(a, b) {
-                return (a.sellPrice < b.sellPrice) ? 1 : -1;
-            });
-            var tableRows = $.map(books,function (book) {
-                return  '<tr>' +
-                            // '<td><img src="'+book.cover+'" width="80" /></td>' +
-                            '<td width="300"><a href="https://m.zhuanzhuan.com/open/ZZBook/index.html?source=goods&webview=zzn&repeatrequest=true&channel=zzbook&metric=P4HDiA9Saaeh7FPLToihqw761123pc&infoId=1132315831909859338#/Book/Detail?tmp=1560529464957&fromChannel=tscp&source=goods&webview=zzn&repeatrequest=true&channel=zzbook&metric=P4HDiA9Saaeh7FPLToihqw761123pc&infoId='+book.infoId+'" target="_blank">'+book.title+'</a></td>' +
-                            '<td>'+book.publisher+'</td>' +
-                            '<td>'+book.sellPrice/100+'</td>' +
-                            '<td>'+book.pubdate+'</td>' +
-                            '<td>'+book.stock+'</td>' +
-                            '<td><a href="https://book.douban.com/isbn/'+book.isbn13+'" target="_blank">豆瓣：'+book.doubanRate+'</a></td>' +
-                            '<td><a onclick="collect('+book.isbn13+')" >收藏</a>&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="uncollect('+book.isbn13+')">取消收藏</a></td>' +
-                        '</tr>'
-            }).join('');
-            $("#zhuanzhuan_table").append('<div><a onclick="pass_all()">已看</a></div><table>'+tableRows+'</table>')
-        };
-        var fetch_book = function (books,cateId,pageNum) {
-            $.ajax({
-                url:'https://app.zhuanzhuan.com/zzopen/sellbook/free_book_list?cateId='+cateId+'&pageNum='+pageNum+'&pageSize=50',
-                type: "GET",
-                dataType: "jsonp",
-                success: function(data) {
-                    var list = data.respData&&data.respData.list;
-                    if (list&&list.length&&pageNum<1390) {
-                        $.each(list, function (index, book) {
-                            if(!books_passed[book.isbn13]&&!books_exist[book.isbn13]){
-                                books.push(book);
-                                books_exist[book.isbn13]=1;
-                            }
-                        });
-                        pageNum++
-                        fetch_book(books,cateId,pageNum);
-                    }else{
-                        if(cateId==cateIds[cateIds.length-1]){
-                            render_books(books);
-                        }
-                    }
-                }
-            });
-        }
-
-
-        $.each(cateIds,function (index,cateId) {
-            fetch_book(books,cateId,1);
-        });
-
-
-    })
-
-</script>
-
+<div id="status_div"></div>
+<div id="books_table"></div>
 
 </body>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
+<script>
+    var iter_num = 0, fin_task_num = 0;
+    var get_books = function (books, book_index, domid) {
+        var book = books[book_index];
+        $("#status_div").text(book.isbn + "=" + book.title);
+                //var url = 'https://app.zhuanzhuan.com/zzopen/sellbook/bookSearch?pageNum=1&pageSize=200&query=' + book.isbn;
+        var url = 'https://app.zhuanzhuan.com/zzopen/sellbook/bookSearch?pageNum=1&pageSize=200&shopType=1&query=' + book.isbn;
+        $.ajax({
+            url: '/proxy?url=' + encodeURIComponent(url),
+            type: "GET",
+            dataType: "json",
+            error: function () {
+                if (book_index + 1 < books.length) {
+                    setTimeout(function () {
+                        get_books(books, book_index + 1, domid);
+                    }, 1000 * 30);
+                } else {
+                    fin_task_num++;
+                    if (fin_task_num === iter_num) {
+                        alert("加载完成");
+                    }
+                }
+            },
+            success: function (result) {
+                if (result.respCode === 0) {
+                    var trs = result.respData.list && result.respData.list.filter(function (item) {
+                        return parseFloat(item.sellPrice / 100) <= book.price_max;
+                    }).map(function (item) {
+                        var books_tr = '<tr>' +
+                            '<td><img src="' + item.cover + '" width="80" /></td>' +
+                            '<td width="400"><a target="_blank" href="https://m.zhuanzhuan.com/open/ZZBook/index.html?infoId=' + item.infoId + '#/Book/Detail?infoId=' + item.infoId + '">' + item.title + ' </a></td>' +
+                            '<td width="50">' + item.sellPrice / 100 + '</td>' +
+                            '<td width="50">' + item.sellDiscount + '</td>' +
+                            '<td width="50">' + item.stock + '</td>' +
+                            '<td width="100">' + item.publisher + '</td>' +
+                            '<td width="100">' + item.pubdate + '</td>' +
+                            '<td width="50">' + item.doubanRate + '</td>' +
+                            '<td width="50">' + item.shopInfo.shopUid + '</td>' +
+                            '<td width="150">' + item.shopInfo.shopName + '</td>' +
+
+                            '<td width="100">' + book.isbn + '</td>' +
+                            '<td width="80">' + book.price_max + '</td>' +
+                            '<td width="80">' + book.weight + '</td>' +
+                            '<td width="50"><a target="_blank" href="http://search.kongfz.com/product_result/?itemfilter=0&status=1&pagenum=1&order=9&ajaxdata=4&key=' + book.isbn + '">孔夫子</a></td>' +
+                            '<td width="50"><a target="_blank" href="https://book.douban.com/isbn/' + book.isbn + '">豆瓣</a></td>' +
+                            '</tr>';
+                        return books_tr;
+                    }).join('');
+                    trs && $("#" + domid).append(trs);
+
+                } else {
+                    setTimeout(function () {
+                        get_books(books, book_index + 1, domid);
+                    }, 1000 * 60);
+                    return;
+                }
+                if (book_index + 1 < books.length) {
+                    setTimeout(function () {
+                        get_books(books, book_index + 1, domid);
+                    }, 0 * (book_index % 50 == 0 && book_index > 1 ? Math.random() * 30 + 30 : 1));
+                } else {
+                    fin_task_num++;
+                    if (fin_task_num === iter_num) {
+                        alert("加载完成");
+                    }
+                }
+            }
+        });
+
+    };
+
+
+    // function start_run() {
+    $('#books_table').html('');
+    $.getJSON('/kongfz_books/weight/0?t=' + (new Date().getTime()), function (books) {
+        var span = parseInt(books.length / 3), domid;
+        for (var i = 0, len = books.length; i < len; i += span) {
+            domid = 'book_table' + (iter_num + 1);
+            $('#books_table').append('<table id="' + domid + '"></table>');
+            get_books(books.slice(i, i + span), 0, domid);
+            iter_num++;
+        }
+        console.log(books);
+    });
+    // }
+
+
+</script>
 </html>

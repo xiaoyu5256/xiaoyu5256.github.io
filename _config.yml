@@ -5,7 +5,7 @@
 # Site
 title: Show me code
 subtitle: Show me code
-description: A coder use java js python php  
+description: A coder use java js python php
 author: 晓宇
 language:	zh-Hans
 timezone: Asia/Shanghai
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: yilia 
+theme: yilia
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
