@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://showmecode.cn/"/>
-  <updated>2021-10-04T09:20:32.862Z</updated>
+  <updated>2021-10-09T03:46:52.591Z</updated>
   <id>http://showmecode.cn/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>硅谷增长黑客实战笔记</title>
+    <link href="http://showmecode.cn/2021/10/09/%E7%A1%85%E8%B0%B7%E5%A2%9E%E9%95%BF%E9%BB%91%E5%AE%A2%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"/>
+    <id>http://showmecode.cn/2021/10/09/硅谷增长黑客实战笔记/</id>
+    <published>2021-10-09T03:27:29.000Z</published>
+    <updated>2021-10-09T03:46:52.591Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://book.douban.com/subject/30186119/">硅谷增长黑客</a></p><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><h3 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h3><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://book.douban.com/subject/30186119/&quot;&gt;硅谷增长黑客&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h3&gt;&lt;h3
+      
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://showmecode.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="增长黑客" scheme="http://showmecode.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%A2%9E%E9%95%BF%E9%BB%91%E5%AE%A2/"/>
+    
+    
+      <category term="读书笔记" scheme="http://showmecode.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="增长黑客" scheme="http://showmecode.cn/tags/%E5%A2%9E%E9%95%BF%E9%BB%91%E5%AE%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac 下 brew 切换为国内源</title>
@@ -658,39 +688,6 @@
       <category term="compass" scheme="http://showmecode.cn/tags/compass/"/>
     
       <category term="前端" scheme="http://showmecode.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Centos安装Python 2.7 python-pip</title>
-    <link href="http://showmecode.cn/2016/04/28/Centos%E5%AE%89%E8%A3%85Python-2-7-python-pip/"/>
-    <id>http://showmecode.cn/2016/04/28/Centos安装Python-2-7-python-pip/</id>
-    <published>2016-04-28T11:11:19.000Z</published>
-    <updated>2020-08-19T12:08:01.299Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>下载python包<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://python.org/ftp/python/2.7.11/Python-2.7.11.tgz</span><br></pre></td></tr></table></figure></p><p>查看是否安装make工具<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">~#</span><span class="bash">rpm -qa|grep make</span></span><br><span class="line">automake-1.11.1-4.el6.noarch</span><br><span class="line">make-3.81-20.el6.x86_64</span><br></pre></td></tr></table></figure></p><p>如果没有安装make工具<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc automake autoconf libtool make</span><br></pre></td></tr></table></figure></p><p>查看是否安装zlib库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">~#</span><span class="bash">rpm -qa|grep zlib</span></span><br><span class="line">zlib-devel-1.2.3-29.el6.x86_64</span><br><span class="line">zlib-1.2.3-29.el6.x86_64</span><br></pre></td></tr></table></figure></p><p>安装zlib<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install zlib-devel</span><br></pre></td></tr></table></figure></p><p>检查是否安装ssl 库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">~#</span><span class="bash">rpm -qa|grep openssl</span></span><br><span class="line">openssl-devel-1.0.1e-16.el6_5.x86_64</span><br><span class="line">openssl-static-1.0.1e-16.el6_5.x86_64</span><br><span class="line">openssl098e-0.9.8e-17.el6.centos.2.x86_64</span><br><span class="line">openssl-1.0.1e-16.el6_5.x86_64</span><br><span class="line">openssl-perl-1.0.1e-16.el6_5.x86_64</span><br></pre></td></tr></table></figure></p><p>安装openssl<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install openssl*</span><br></pre></td></tr></table></figure></p><p>安装bzip2依赖库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y bzip2*</span><br></pre></td></tr></table></figure></p><span id="more"></span><h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf Python-2.7.11.tgz</span><br><span class="line">vi Modules/Setup.dist</span><br></pre></td></tr></table></figure><p>找到<br><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#SSL=/usr/local/ssl</span><br><span class="line">#_ssl <span class="module-access"><span class="module"><span class="identifier">_ssl</span>.</span></span>c \</span><br><span class="line">#       -DUSE_SSL -<span class="constructor">I$(SSL)</span>/<span class="keyword">include</span> -<span class="constructor">I$(SSL)</span>/<span class="keyword">include</span>/openssl \</span><br><span class="line">#       -<span class="constructor">L$(SSL)</span>/lib -lssl -lcrypto</span><br><span class="line">......</span><br><span class="line">#zlib zlibmodule.c -<span class="constructor">I$(<span class="params">prefix</span>)</span>/<span class="keyword">include</span> -<span class="constructor">L$(<span class="params">exec_prefix</span>)</span>/lib -lz</span><br></pre></td></tr></table></figure><br>去掉注释</p><p>编译<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/<span class="keyword">local</span>/python2<span class="number">.7</span></span><br><span class="line"><span class="built_in">make</span> all</span><br><span class="line"><span class="built_in">make</span> install</span><br><span class="line"><span class="built_in">make</span> clean</span><br><span class="line"><span class="built_in">make</span> distclean</span><br></pre></td></tr></table></figure><br>建立python2.7 软链<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">~#</span><span class="bash">mv /usr/bin/python /usr/bin/python.bak</span></span><br><span class="line"><span class="meta">~#</span><span class="bash">ln -s /usr/<span class="built_in">local</span>/python2.7/bin/python2.7 /usr/bin/python2.7</span></span><br><span class="line"><span class="meta">~#</span><span class="bash">ln -s /usr/bin/python2.7 /usr/bin/python</span></span><br></pre></td></tr></table></figure></p><h3 id="解决yum无法使用的问题"><a href="#解决yum无法使用的问题" class="headerlink" title="解决yum无法使用的问题"></a>解决yum无法使用的问题</h3><p>因为centos 6.7 下yum默认使用的是python2.6<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/bin/yum</span><br><span class="line">----------------------------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/usr/bin/python</span></span><br><span class="line">import sys</span><br><span class="line">try:</span><br><span class="line">    import yum</span><br><span class="line">except ImportError:</span><br></pre></td></tr></table></figure><br>修改为<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/usr/bin/python2.6</span></span><br></pre></td></tr></table></figure></p><h3 id="安装python-pip工具"><a href="#安装python-pip工具" class="headerlink" title="安装python-pip工具"></a>安装python-pip工具</h3><p>先安装setup-tools<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg  --no-check-certificate</span><br><span class="line">chmod +x setuptools-0.6c11-py2.7.egg</span><br><span class="line">sh setuptools-0.6c11-py2.7.egg</span><br></pre></td></tr></table></figure></p><p>安装pip<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget https://pypi.python.org/packages/source/p/pip/pip-1.3.1.tar.gz --no-check-certificate</span><br><span class="line">cp pip-1.3.1.tar.gz /usr/src/</span><br><span class="line">tar zxvf pip-1.3.1.tar.gz</span><br><span class="line">cd pip-1.3.1</span><br><span class="line">python setup.py install</span><br><span class="line">ln -s /usr/local/python2.7/bin/pip /usr/bin/pip</span><br><span class="line">ln -s /usr/local/python2.7/bin/pip /usr/bin/pip2.7</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h3&gt;&lt;p&gt;下载python包&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget http://python.org/ftp/python/2.7.11/Python-2.7.11.tgz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;查看是否安装make工具&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;~#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;rpm -qa|grep make&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;automake-1.11.1-4.el6.noarch&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make-3.81-20.el6.x86_64&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;如果没有安装make工具&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum -y install gcc automake autoconf libtool make&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;查看是否安装zlib库&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;~#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;rpm -qa|grep zlib&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;zlib-devel-1.2.3-29.el6.x86_64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;zlib-1.2.3-29.el6.x86_64&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;安装zlib&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum install zlib-devel&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;检查是否安装ssl 库&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;~#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;rpm -qa|grep openssl&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;openssl-devel-1.0.1e-16.el6_5.x86_64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;openssl-static-1.0.1e-16.el6_5.x86_64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;openssl098e-0.9.8e-17.el6.centos.2.x86_64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;openssl-1.0.1e-16.el6_5.x86_64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;openssl-perl-1.0.1e-16.el6_5.x86_64&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;安装openssl&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum install openssl*&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;安装bzip2依赖库&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yum install -y bzip2*&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="后端" scheme="http://showmecode.cn/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-      <category term="运维" scheme="http://showmecode.cn/categories/%E5%90%8E%E7%AB%AF/%E8%BF%90%E7%BB%B4/"/>
-    
-    
-      <category term="centos" scheme="http://showmecode.cn/tags/centos/"/>
-    
-      <category term="python" scheme="http://showmecode.cn/tags/python/"/>
     
   </entry>
   
