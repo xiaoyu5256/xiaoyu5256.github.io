@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://showmecode.cn/"/>
-  <updated>2021-10-09T12:32:23.600Z</updated>
+  <updated>2021-10-09T12:35:05.831Z</updated>
   <id>http://showmecode.cn/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://showmecode.cn/2021/10/09/%E7%A1%85%E8%B0%B7%E5%A2%9E%E9%95%BF%E9%BB%91%E5%AE%A2%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/"/>
     <id>http://showmecode.cn/2021/10/09/硅谷增长黑客实战笔记/</id>
     <published>2021-10-09T03:27:29.000Z</published>
-    <updated>2021-10-09T12:32:23.600Z</updated>
+    <updated>2021-10-09T12:35:05.831Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://book.douban.com/subject/30186119/">硅谷增长黑客</a></p><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>增长黑客这一概念起源于美国互联网行业，最早由 Sean Ellis 提出，已经帮助硅谷多家公司完成产品的快速增长。其中最著名的案例包括 Dropbox，Hotmail，Facebook。近年来，增长黑客的概念传到国内，也引起了众多创业者的关注。</p><p>增长黑客本身是一套产品管理理论框架，并不是一套实践框架，如何才能真正地对公司产生价值呢？除了有一个完善的增长团队，还需要有产品作为内容，工具作为执行手段。</p><p>增长的精髓是一套体系和方法，它以数据为指引，以实验的方式，系统性地在用户生命周期的各个阶段（包含用户的获取、激活、留存、推荐、变现、回流等），虚招当下性价比最高的机会，在具体的执行上横跨市场、产品、工程、设计和数据等团队，通过快速迭代实验的方式达到目标。</p><p>结果可量化、方法可重复、过程可迭代（量化，公式化，迭代化）</p><h3 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h3><p><strong>增长流程</strong></p><p>根据目标寻找对其影响最大的领域，比如，新用户激活，对领域进行分析，寻找突破点，产生一系统的实验想法与方向，然后进入实验迭代阶段，以一两周为一个周期设计实验，给产生的想法按优先级排序，做开发和上线实验，分析数据结果，再把数据结果应用到下一实验中，在全过程中，关注指标变化趋势。</p><p><img src="images/pimg/image-20211009192655753.png" alt="image-20211009192655753"></p><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p><strong>任何事情都是一个实验，通过它，你或者实现增长，或者学到经验</strong></p><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://book.douban.com/subject/30186119/">硅谷增长黑客</a></p><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>增长黑客这一概念起源于美国互联网行业，最早由 Sean Ellis 提出，已经帮助硅谷多家公司完成产品的快速增长。其中最著名的案例包括 Dropbox，Hotmail，Facebook。近年来，增长黑客的概念传到国内，也引起了众多创业者的关注。</p><p>增长黑客本身是一套产品管理理论框架，并不是一套实践框架，如何才能真正地对公司产生价值呢？除了有一个完善的增长团队，还需要有产品作为内容，工具作为执行手段。</p><p>增长的精髓是一套体系和方法，它以数据为指引，以实验的方式，系统性地在用户生命周期的各个阶段（包含用户的获取、激活、留存、推荐、变现、回流等），虚招当下性价比最高的机会，在具体的执行上横跨市场、产品、工程、设计和数据等团队，通过快速迭代实验的方式达到目标。</p><p>结果可量化、方法可重复、过程可迭代（量化，公式化，迭代化）</p><h3 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h3><p><strong>增长流程</strong></p><p>根据目标寻找对其影响最大的领域，比如，新用户激活，对领域进行分析，寻找突破点，产生一系统的实验想法与方向，然后进入实验迭代阶段，以一两周为一个周期设计实验，给产生的想法按优先级排序，做开发和上线实验，分析数据结果，再把数据结果应用到下一实验中，在全过程中，关注指标变化趋势。</p><p><img src="images/pimg/image-20211009192655753.png" alt="增长流程"></p><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p><strong>任何事情都是一个实验，通过它，你或者实现增长，或者学到经验</strong></p><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3>]]></content>
     
     <summary type="html">
     
