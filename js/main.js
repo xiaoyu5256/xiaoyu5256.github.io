@@ -1,3 +1,4 @@
+requirejs.config({waitSeconds: 0});
 require([], function (){
 
 	var isMobileInit = false;
