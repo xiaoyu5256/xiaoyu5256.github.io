@@ -219,6 +219,7 @@ a {
   display: block;
   position: relative;
   z-index: 100;
+  margin-left: -5px;
 }
 #container #mobile-nav #header .header-menu {
   height: auto;
