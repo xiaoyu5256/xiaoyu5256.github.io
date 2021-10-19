@@ -95,9 +95,9 @@
       <category term="brew" scheme="http://showmecode.cn/categories/%E5%B7%A5%E5%85%B7/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/brew/"/>
     
     
-      <category term="brew" scheme="http://showmecode.cn/tags/brew/"/>
-    
       <category term="开发工具" scheme="http://showmecode.cn/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="brew" scheme="http://showmecode.cn/tags/brew/"/>
     
       <category term="命令行" scheme="http://showmecode.cn/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
