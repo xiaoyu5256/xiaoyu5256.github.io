@@ -22,6 +22,7 @@ Homebrew 是一款自由及开放源代码的软件包管理系统，用以简�
 | homebrew-bottles | Homebrew 预编译二进制软件包     |
 | homebrew-cask    | 提供 macOS 应用和大型二进制文件 |
 
+<!--more-->    
 # **替换为阿里源**
 
 ```javascript
